@@ -1,0 +1,1 @@
+jQuery('body').on('change','input.alg_wc_ccf_fee',function(){jQuery('body').trigger('update_checkout')});

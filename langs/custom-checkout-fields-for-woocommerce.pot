@@ -1,0 +1,1064 @@
+#: includes/alg-wc-ccf-functions.php:170
+msgid "No shipping class"
+msgstr ""
+
+#: includes/alg-wc-ccf-functions.php:192
+msgid "Guest"
+msgstr ""
+
+#: includes/alg-wc-ccf-functions.php:330
+msgctxt "enhanced select"
+msgid "No matches found"
+msgstr ""
+
+#: includes/alg-wc-ccf-functions.php:331
+msgctxt "enhanced select"
+msgid "Please enter 1 or more characters"
+msgstr ""
+
+#: includes/alg-wc-ccf-functions.php:332
+msgctxt "enhanced select"
+msgid "Please enter %qty% or more characters"
+msgstr ""
+
+#: includes/alg-wc-ccf-functions.php:333
+msgctxt "enhanced select"
+msgid "Please delete 1 character"
+msgstr ""
+
+#: includes/alg-wc-ccf-functions.php:334
+msgctxt "enhanced select"
+msgid "Please delete %qty% characters"
+msgstr ""
+
+#: includes/alg-wc-ccf-functions.php:335
+msgctxt "enhanced select"
+msgid "Loading more results&hellip;"
+msgstr ""
+
+#: includes/alg-wc-ccf-functions.php:336
+msgctxt "enhanced select"
+msgid "Searching&hellip;"
+msgstr ""
+
+#: includes/alg-wc-ccf-functions.php:354
+msgid "Now"
+msgstr ""
+
+#: includes/alg-wc-ccf-functions.php:355
+msgid "Done"
+msgstr ""
+
+#: includes/alg-wc-ccf-functions.php:356
+msgid "Time"
+msgstr ""
+
+#: includes/alg-wc-ccf-functions.php:357
+msgid "Hour"
+msgstr ""
+
+#: includes/alg-wc-ccf-functions.php:358
+msgid "Minute"
+msgstr ""
+
+#: includes/class-alg-wc-ccf-frontend.php:705
+#: includes/settings/alg-wc-ccf-options.php:283
+#: includes/settings/alg-wc-ccf-options.php:781
+msgid "Yes"
+msgstr ""
+
+#: includes/class-alg-wc-ccf-frontend.php:706
+#: includes/settings/alg-wc-ccf-options.php:289
+msgid "No"
+msgstr ""
+
+#: includes/class-alg-wc-ccf.php:140
+msgid "Settings"
+msgstr ""
+
+#: includes/class-alg-wc-ccf.php:143
+msgid "Go Pro"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:49
+#, php-format
+msgid "For %s field type."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:50
+#, php-format
+msgid "Fill this section only if %s type is selected."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:62
+#: includes/settings/class-alg-wc-ccf-settings-field.php:25
+msgid "Field"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:63
+msgid "Meta key:"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:68
+msgid "Enable/disable field"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:69
+#: includes/settings/alg-wc-ccf-options.php:137
+#: includes/settings/alg-wc-ccf-options.php:407
+#: includes/settings/alg-wc-ccf-options.php:545
+#: includes/settings/class-alg-wc-ccf-settings-general.php:154
+#: includes/settings/class-alg-wc-ccf-settings-general.php:182
+msgid "Enable"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:75
+msgid "Type"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:81
+msgid "Text"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:82
+msgid "Textarea"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:83
+msgid "Number"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:84
+msgid "Checkbox"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:85
+#: includes/settings/alg-wc-ccf-options.php:361
+#: includes/settings/alg-wc-ccf-options.php:377
+#: includes/settings/alg-wc-ccf-options.php:398
+#: includes/settings/alg-wc-ccf-options.php:406
+msgid "Datepicker"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:86
+msgid "Weekpicker"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:87
+msgid "Timepicker"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:88
+msgid "Select"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:89
+#: includes/settings/alg-wc-ccf-options.php:136
+#: includes/settings/alg-wc-ccf-options.php:159
+msgid "Multiselect"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:90
+msgid "Radio"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:91
+msgid "Password"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:92
+msgid "Country"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:93
+msgid "State"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:94
+msgid "Email"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:95
+msgid "Phone"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:96
+msgid "Color"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:97
+msgid "Search"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:98
+msgid "URL"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:99
+msgid "Range"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:103
+msgid "Duplicate"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:109
+msgid "Do not duplicate"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:110
+#: includes/settings/class-alg-wc-ccf-settings-general.php:162
+msgid "For each product in cart"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:111
+#: includes/settings/class-alg-wc-ccf-settings-general.php:168
+msgid "For each product item in cart"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:115
+msgid "Label"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:121
+msgid "Placeholder"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:127
+msgid "Default value"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:128
+msgid "Enter default field value here. Use 1 or 0 for the checkbox type."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:134
+msgid "Prepopulate default value"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:135
+msgid "For logged in customers, pull data from their account."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:136
+#: includes/settings/alg-wc-ccf-options.php:159
+#, php-format
+msgid "Ignored for the \"%s\" type."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:143
+msgid "Description"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:149
+#: includes/settings/alg-wc-ccf-options.php:150
+msgid "Required"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:156
+msgid "User profile"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:157
+#: includes/settings/alg-wc-ccf-options.php:332
+#: includes/settings/alg-wc-ccf-options.php:767
+#: includes/settings/class-alg-wc-ccf-settings-general.php:88
+#: includes/settings/class-alg-wc-ccf-settings-general.php:95
+#: includes/settings/class-alg-wc-ccf-settings-general.php:120
+msgid "Add"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:158
+msgid "Adds the field to user profile pages."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:171
+msgid "Position Options"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:176
+msgid "Section"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:182
+msgid "Billing"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:183
+msgid "Shipping"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:184
+msgid "Account"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:185
+msgid "Order notes"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:189
+msgid "Priority (i.e. order)"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:190
+msgid "Sets field position in the section."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:191
+msgid ""
+"For example, \"First name\" field priority is 10, \"Email address\" field "
+"priority is 110."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:203
+msgid "Select/Multiselect/Radio Type Options"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:204
+msgid "select/multiselect/radio"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:209
+msgid "Options"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:210
+msgid "One option per line"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:217
+msgid "Select/multiselect: \"Select2\""
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:218
+msgid "Use Select2"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:224
+msgid "Select2: Min input"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:225
+msgid "Select2: Number of characters necessary to start a search."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:226
+#: includes/settings/alg-wc-ccf-options.php:235
+#: includes/settings/alg-wc-ccf-options.php:736
+msgid "Ignored if set to zero."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:233
+msgid "Select2: Max input"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:234
+msgid "Select2: Maximum number of characters that can be entered for an input."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:242
+msgid "Select2: Text input by user"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:243
+msgid ""
+"In addition to a prepopulated menu of options, Select2 can dynamically "
+"create new options from text input by the user in the search box."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:249
+msgid "Select2: Custom text"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:250
+#: includes/settings/alg-wc-ccf-options.php:439
+msgid "Custom text, e.g. translations."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:274
+msgid "Checkbox Type Options"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:275
+msgid "checkbox"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:280
+msgid "Value for ON"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:286
+msgid "Value for OFF"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:298
+#: includes/settings/alg-wc-ccf-options.php:473
+msgid "Datepicker/Weekpicker Type Options"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:299
+msgid "datepicker/weekpicker"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:304
+msgid "Date format"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:305
+#, php-format
+msgid ""
+"Visit <a href=\"%s\" target=\"_blank\">documentation on date and time "
+"formatting</a> for valid date formats"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:307
+msgid "Leave blank to use your current WordPress format"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:313
+msgid "Min date"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:314
+#: includes/settings/alg-wc-ccf-options.php:323
+msgid "days"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:315
+#: includes/settings/alg-wc-ccf-options.php:324
+msgid "Number of days."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:316
+#: includes/settings/alg-wc-ccf-options.php:325
+msgid "You can also use shortcodes here."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:322
+msgid "Max date"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:331
+msgid "Year selector"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:338
+msgid "Year selector: year range"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:339
+msgid ""
+"The range of years displayed in the year drop-down: either relative to "
+"today's year (\"-nn:+nn\"), relative to the currently selected year (\"c-nn:c"
+"+nn\"), absolute (\"nnnn:nnnn\"), or combinations of these formats (\"nnnn:-"
+"nn\"). Note that this option only affects what appears in the drop-down, to "
+"restrict which dates may be selected use the \"Min date\" and/or \"Max date"
+"\" options."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:345
+msgid "First week day"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:351
+#: includes/settings/alg-wc-ccf-options.php:367
+msgid "Sunday"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:352
+#: includes/settings/alg-wc-ccf-options.php:368
+msgid "Monday"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:353
+#: includes/settings/alg-wc-ccf-options.php:369
+msgid "Tuesday"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:354
+#: includes/settings/alg-wc-ccf-options.php:370
+msgid "Wednesday"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:355
+#: includes/settings/alg-wc-ccf-options.php:371
+msgid "Thursday"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:356
+#: includes/settings/alg-wc-ccf-options.php:372
+msgid "Friday"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:357
+#: includes/settings/alg-wc-ccf-options.php:373
+msgid "Saturday"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:361
+msgid "Exclude days"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:377
+msgid "Exclude months"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:383
+msgid "January"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:384
+msgid "February"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:385
+msgid "March"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:386
+msgid "April"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:387
+msgid "May"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:388
+msgid "June"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:389
+msgid "July"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:390
+msgid "August"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:391
+msgid "September"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:392
+msgid "October"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:393
+msgid "November"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:394
+msgid "December"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:398
+msgid "Exclude dates"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:399
+#, php-format
+msgid ""
+"In %s format, separated by comma. You can use wildcard (%s) in dates. E.g.: "
+"%s"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:406
+#: includes/settings/alg-wc-ccf-options.php:413
+#: includes/settings/alg-wc-ccf-options.php:424
+#: includes/settings/alg-wc-ccf-options.php:431
+#: includes/settings/alg-wc-ccf-options.php:438
+#: includes/settings/alg-wc-ccf-options.php:474
+msgid "Timepicker addon"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:413
+#: includes/settings/alg-wc-ccf-options.php:418
+#: includes/settings/alg-wc-ccf-options.php:469
+#: includes/settings/alg-wc-ccf-options.php:474
+msgid "Time format"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:414
+#, php-format
+msgid ""
+"Visit <a href=\"%s\" target=\"_blank\">timepicker addon options page</a> for "
+"valid time formats"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:416
+#: includes/settings/alg-wc-ccf-options.php:472
+#, php-format
+msgid ""
+"Please note that time formatting here differs from the formatting in \"%s\" "
+"option."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:417
+#: includes/settings/alg-wc-ccf-options.php:463
+msgid "Timepicker Type Options"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:424
+#: includes/settings/alg-wc-ccf-options.php:487
+msgid "Min time"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:425
+#: includes/settings/alg-wc-ccf-options.php:432
+#: includes/settings/alg-wc-ccf-options.php:488
+#: includes/settings/alg-wc-ccf-options.php:495
+#, php-format
+msgid "In %s format, e.g.: %s"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:431
+#: includes/settings/alg-wc-ccf-options.php:494
+msgid "Max time"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:438
+msgid "Custom text"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:464
+msgid "timepicker"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:470
+#, php-format
+msgid ""
+"Visit <a href=\"%s\" target=\"_blank\">timepicker options page</a> for valid "
+"time formats"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:480
+msgid "Interval"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:481
+msgid "minutes"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:507
+msgid "Input Options"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:512
+msgid "Max length"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:513
+msgid ""
+"Maximum number of character for an input field. E.g. for <strong>Text</"
+"strong> type."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:520
+msgid "Min value"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:521
+msgid ""
+"Minimum value for an input field. E.g. for <strong>Number/Range</strong> "
+"type."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:522
+#: includes/settings/alg-wc-ccf-options.php:530
+#: includes/settings/alg-wc-ccf-options.php:538
+msgid "Leave blank to disable."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:528
+msgid "Max value"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:529
+msgid ""
+"Maximum value for an input field. E.g. for <strong>Number/Range</strong> "
+"type."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:536
+msgid "Step"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:537
+msgid ""
+"Legal number intervals for an input field. E.g. for <strong>Number/Range</"
+"strong> type."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:544
+msgid "Autofocus"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:551
+msgid "Autocomplete"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:563
+msgid "Style Options"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:568
+msgid "Class"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:574
+msgid "Wide"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:575
+msgid "First"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:576
+msgid "Last"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:580
+msgid "Label class"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:586
+msgid "Input class"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:598
+msgid "Visibility Options"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:603
+msgid "Categories"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:604
+msgid ""
+"Show this field only if there is a product of selected category in cart. "
+"Leave blank to show for all products."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:612
+msgid "Tags"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:613
+msgid ""
+"Show this field only if there is a product of selected tag in cart. Leave "
+"blank to show for all products."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:621
+msgid "Products"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:622
+msgid ""
+"Show this field only if there is a selected product in cart. Leave blank to "
+"show for all products."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:629
+msgid "Search for a product&hellip;"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:634
+msgid "User roles"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:635
+msgid ""
+"Show this field only if visitor has selected user role. Leave blank to show "
+"for all users."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:643
+msgid "Min cart amount"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:644
+msgid ""
+"Show this field only if cart total is at least this amount. Ignored if set "
+"to zero."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:651
+msgid "Max cart amount"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:652
+msgid ""
+"Show this field only if cart total is not more than this amount. Ignored if "
+"set to zero."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:659
+msgid "Product shipping classes"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:660
+msgid ""
+"Show this field only if there is a product with selected shipping classes in "
+"cart. Leave blank to show for all products."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:668
+msgid "Virtual products"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:674
+#: includes/settings/alg-wc-ccf-options.php:686
+msgid "Always show the field"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:675
+msgid ""
+"Show the field only if there are at least one virtual product in the cart"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:676
+msgid "Hide the field if there are at least one virtual product in the cart"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:680
+msgid "Downloadable products"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:687
+msgid ""
+"Show the field only if there are at least one downloadable product in the "
+"cart"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:688
+msgid ""
+"Hide the field if there are at least one downloadable product in the cart"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:692
+msgid "Countries"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:693
+msgid "Select all countries"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:694
+msgid "Deselect all countries"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:702
+msgid "Countries action"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:708
+msgid "Hide in selected countries"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:709
+msgid "Show in selected countries only"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:713
+msgid "By another field"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:714
+#, php-format
+msgid "E.g.: %s."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:716
+msgid "Visibility based on another field value. Enter field ID here."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:728
+msgid "Fee Options"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:729
+msgid ""
+"In this optional section you can set fees that are added to the cart totals "
+"in case if custom field's value is not empty."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:734
+msgid "Fee value"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:735
+msgid "Can be positive or negative."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:743
+msgid "Fee type"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:748
+msgid "Fixed"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:749
+msgid "Percent"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:753
+msgid "Percent fee: Cart total"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:754
+#: includes/settings/alg-wc-ccf-options.php:766
+msgid "Used only if \"Percent\" is selected in \"Fee type\"."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:759
+msgid "Subtotal before discounts"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:760
+msgid "Subtotal after discounts"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:764
+msgid "Percent fee: Add shipping"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:765
+msgid "Adds shipping cost to cart total."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:773
+msgid "Fee title"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:774
+msgid "Can be empty."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:780
+msgid "Is fee taxable"
+msgstr ""
+
+#: includes/settings/class-alg-wc-ccf-settings-general.php:25
+msgid "General"
+msgstr ""
+
+#: includes/settings/class-alg-wc-ccf-settings-general.php:36
+#, php-format
+msgid "Placeholders: %s"
+msgstr ""
+
+#: includes/settings/class-alg-wc-ccf-settings-general.php:55
+msgid "Custom Checkout Fields Options"
+msgstr ""
+
+#: includes/settings/class-alg-wc-ccf-settings-general.php:60
+#: includes/settings/class-alg-wc-settings-ccf.php:25
+msgid "Custom Checkout Fields"
+msgstr ""
+
+#: includes/settings/class-alg-wc-ccf-settings-general.php:61
+msgid "Enable plugin"
+msgstr ""
+
+#: includes/settings/class-alg-wc-ccf-settings-general.php:67
+msgid "Custom fields number"
+msgstr ""
+
+#: includes/settings/class-alg-wc-ccf-settings-general.php:68
+#, php-format
+msgid ""
+"Click \"%s\" after you set this number - new settings sections will be "
+"displayed for each field."
+msgstr ""
+
+#: includes/settings/class-alg-wc-ccf-settings-general.php:69
+msgid "Save changes"
+msgstr ""
+
+#: includes/settings/class-alg-wc-ccf-settings-general.php:82
+msgid "General Options"
+msgstr ""
+
+#: includes/settings/class-alg-wc-ccf-settings-general.php:87
+msgid "Add all fields to admin emails"
+msgstr ""
+
+#: includes/settings/class-alg-wc-ccf-settings-general.php:94
+msgid "Add all fields to customers emails"
+msgstr ""
+
+#: includes/settings/class-alg-wc-ccf-settings-general.php:101
+#: includes/settings/class-alg-wc-ccf-settings-general.php:126
+msgid "Before the fields"
+msgstr ""
+
+#: includes/settings/class-alg-wc-ccf-settings-general.php:107
+#: includes/settings/class-alg-wc-ccf-settings-general.php:132
+msgid "Each field"
+msgstr ""
+
+#: includes/settings/class-alg-wc-ccf-settings-general.php:113
+#: includes/settings/class-alg-wc-ccf-settings-general.php:138
+msgid "After the fields"
+msgstr ""
+
+#: includes/settings/class-alg-wc-ccf-settings-general.php:119
+msgid ""
+"Add all fields to \"Order Received\" (i.e. \"Thank You\") and \"View Order\" "
+"pages"
+msgstr ""
+
+#: includes/settings/class-alg-wc-ccf-settings-general.php:148
+msgid "Advanced Options"
+msgstr ""
+
+#: includes/settings/class-alg-wc-ccf-settings-general.php:153
+msgid "Force fields sort by priority"
+msgstr ""
+
+#: includes/settings/class-alg-wc-ccf-settings-general.php:155
+msgid ""
+"Enable this if you are having theme related issues with \"Priority (i.e. "
+"order)\" options."
+msgstr ""
+
+#: includes/settings/class-alg-wc-ccf-settings-general.php:161
+msgid "Label template for duplicated fields"
+msgstr ""
+
+#: includes/settings/class-alg-wc-ccf-settings-general.php:174
+msgid "Glue"
+msgstr ""
+
+#: includes/settings/class-alg-wc-ccf-settings-general.php:181
+msgid "Hide unrelated type options"
+msgstr ""
+
+#: includes/settings/class-alg-wc-ccf-settings-general.php:188
+msgid "Fields ID"
+msgstr ""
+
+#: includes/settings/class-alg-wc-ccf-settings-general.php:189
+#, php-format
+msgid ""
+"Will be used in all fields as the middle part of ID, wrapped in field "
+"section and number, e.g. %s."
+msgstr ""
+
+#: includes/settings/class-alg-wc-settings-ccf.php:58
+msgid "Reset Settings"
+msgstr ""
+
+#: includes/settings/class-alg-wc-settings-ccf.php:63
+msgid "Reset section settings"
+msgstr ""
+
+#: includes/settings/class-alg-wc-settings-ccf.php:64
+msgid "Reset"
+msgstr ""
+
+#: includes/settings/class-alg-wc-settings-ccf.php:65
+msgid "Check the box and save changes to reset."
+msgstr ""
