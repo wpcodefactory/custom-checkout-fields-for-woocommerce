@@ -2,7 +2,7 @@
 /**
  * Custom Checkout Fields for WooCommerce - Frontend Class
  *
- * @version 1.7.0
+ * @version 1.7.2
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -189,7 +189,7 @@ class Alg_WC_CCF_Frontend {
 	/**
 	 * add_fees.
 	 *
-	 * @version 1.6.0
+	 * @version 1.7.2
 	 * @since   1.2.0
 	 *
 	 * @todo    [later] check why `get_cart_contents_total()` returns wrong value (e.g. `100` -> `99.99`)
@@ -228,11 +228,9 @@ class Alg_WC_CCF_Frontend {
 						$fee_taxable = alg_wc_ccf_get_field_option( 'fee_taxable', $i, 'yes' );
 						if ( 'percent' === $fee_type ) {
 							// Getting cart total
-							$total = ( 'subtotal' === alg_wc_ccf_get_field_option( 'fee_percent_total', $i, 'cart_contents_total' ) ?
-								$cart->get_subtotal() : $cart->get_cart_contents_total() );
-							if ( 'yes' === alg_wc_ccf_get_field_option( 'fee_percent_shipping', $i, 'no' ) ) {
-								$total += $cart->get_shipping_total();
-							}
+							$total = ( 'subtotal' === alg_wc_ccf_get_field_option( 'fee_percent_total', $i, 'cart_contents_total' ) ? $cart->get_subtotal() : $cart->get_cart_contents_total() ) +
+								( 'yes' === alg_wc_ccf_get_field_option( 'fee_percent_shipping', $i, 'no' ) ? $cart->get_shipping_total() : 0 );
+							$total = apply_filters( 'alg_wc_ccf_fee_cart_total', $total, $i );
 							// Calculating final fee amount
 							$fee_value = $total * $fee_value / 100;
 						}
@@ -572,9 +570,10 @@ class Alg_WC_CCF_Frontend {
 	/**
 	 * is_visible.
 	 *
-	 * @version 1.6.5
+	 * @version 1.7.2
 	 * @since   1.0.0
 	 *
+	 * @todo    [now] (dev) min/max cart amount: do we need to `WC()->cart->calculate_totals()`?
 	 * @todo    [maybe] (dev) `alg_wc_ccf_field_visible`: rename to `alg_wc_custom_checkout_fields_field_visible`?
 	 * @todo    [next] (dev) move this to `Alg_WC_CCF_Frontend_Visibility` class?
 	 */
@@ -645,20 +644,14 @@ class Alg_WC_CCF_Frontend {
 			}
 		}
 		// Checking min/max cart amount
-		$cart_total = false;
-		if ( ( $min_cart_amount = alg_wc_ccf_get_field_option( 'min_cart_amount', $i, 0 ) ) > 0 ) {
+		$min_cart_amount = alg_wc_ccf_get_field_option( 'min_cart_amount', $i, 0 );
+		$max_cart_amount = alg_wc_ccf_get_field_option( 'max_cart_amount', $i, 0 );
+		if ( $min_cart_amount > 0 || $max_cart_amount > 0 ) {
 			WC()->cart->calculate_totals();
-			$cart_total = WC()->cart->total;
-			if ( $cart_total < $min_cart_amount ) {
-				return false;
-			}
-		}
-		if ( ( $max_cart_amount = alg_wc_ccf_get_field_option( 'max_cart_amount', $i, 0 ) ) > 0 ) {
-			if ( false === $cart_total ) {
-				WC()->cart->calculate_totals();
-				$cart_total = WC()->cart->total;
-			}
-			if ( $cart_total > $max_cart_amount ) {
+			$cart_total = WC()->cart->get_total( 'edit' ) -
+				( 'no' === alg_wc_ccf_get_field_option( 'cart_total_shipping', $i, 'yes' ) ? ( WC()->cart->get_shipping_total() + WC()->cart->get_shipping_tax() ) : 0 );
+			$cart_total = apply_filters( 'alg_wc_ccf_min_max_cart_amount_cart_total', $cart_total, $i );
+			if ( ( $min_cart_amount > 0 && $cart_total < $min_cart_amount ) || ( $max_cart_amount > 0 && $cart_total > $max_cart_amount ) ) {
 				return false;
 			}
 		}

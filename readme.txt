@@ -2,8 +2,8 @@
 Contributors: algoritmika, anbinder
 Tags: woocommerce, checkout, woo commerce
 Requires at least: 4.4
-Tested up to: 5.9
-Stable tag: 1.7.1
+Tested up to: 6.0
+Stable tag: 1.7.2
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -100,6 +100,11 @@ Add custom fields to WooCommerce checkout page.
 1. Field options.
 
 == Changelog ==
+
+= 1.7.2 - 16/07/2022 =
+* Dev - Visibility Options - Min/Max cart amount - "Add shipping cost to cart total" option added.
+* WC tested up to: 6.7.
+* Tested up to: 6.0.
 
 = 1.7.1 - 13/04/2022 =
 * Tested up to: 5.9.

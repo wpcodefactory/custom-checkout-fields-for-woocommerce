@@ -2,7 +2,7 @@
 /**
  * Custom Checkout Fields for WooCommerce - Options
  *
- * @version 1.7.0
+ * @version 1.7.2
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -14,7 +14,7 @@ if ( ! function_exists( 'alg_get_wc_ccf_options' ) ) {
 	/**
 	 * alg_get_wc_ccf_options.
 	 *
-	 * @version 1.7.0
+	 * @version 1.7.2
 	 * @since   1.0.0
 	 *
 	 * @todo    [now] [!] (dev) `Select2`: `radio` (move it to a separate subsection, e.g. "Select2 Options")?
@@ -656,6 +656,13 @@ if ( ! function_exists( 'alg_get_wc_ccf_options' ) ) {
 				'custom_attributes' => array( 'min' => 0, 'step' => $price_step ),
 			),
 			array(
+				'desc'     => __( 'Add shipping cost to cart total', 'custom-checkout-fields-for-woocommerce' ),
+				'desc_tip' => __( 'Used for "Min cart amount" and "Max cart amount" options.', 'custom-checkout-fields-for-woocommerce' ),
+				'id'       => 'cart_total_shipping',
+				'type'     => 'checkbox',
+				'default'  => 'yes',
+			),
+			array(
 				'title'    => __( 'Product shipping classes', 'custom-checkout-fields-for-woocommerce' ),
 				'desc_tip' => __( 'Show this field only if there is a product with selected shipping classes in cart. Leave blank to show for all products.', 'custom-checkout-fields-for-woocommerce' ),
 				'id'       => 'shipping_classes_in',
@@ -761,10 +768,7 @@ if ( ! function_exists( 'alg_get_wc_ccf_options' ) ) {
 				),
 			),
 			array(
-				'title'    => __( 'Percent fee: Add shipping', 'custom-checkout-fields-for-woocommerce' ),
-				'desc_tip' => __( 'Adds shipping cost to cart total.', 'custom-checkout-fields-for-woocommerce' ) . ' ' .
-					__( 'Used only if "Percent" is selected in "Fee type".', 'custom-checkout-fields-for-woocommerce' ),
-				'desc'     => __( 'Add', 'custom-checkout-fields-for-woocommerce' ),
+				'desc'     => __( 'Add shipping cost to cart total', 'custom-checkout-fields-for-woocommerce' ),
 				'id'       => 'fee_percent_shipping',
 				'type'     => 'checkbox',
 				'default'  => 'no',

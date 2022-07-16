@@ -61,13 +61,13 @@ msgstr ""
 msgid "Minute"
 msgstr ""
 
-#: includes/class-alg-wc-ccf-frontend.php:705
+#: includes/class-alg-wc-ccf-frontend.php:698
 #: includes/settings/alg-wc-ccf-options.php:283
-#: includes/settings/alg-wc-ccf-options.php:781
+#: includes/settings/alg-wc-ccf-options.php:785
 msgid "Yes"
 msgstr ""
 
-#: includes/class-alg-wc-ccf-frontend.php:706
+#: includes/class-alg-wc-ccf-frontend.php:699
 #: includes/settings/alg-wc-ccf-options.php:289
 msgid "No"
 msgstr ""
@@ -261,7 +261,6 @@ msgstr ""
 
 #: includes/settings/alg-wc-ccf-options.php:157
 #: includes/settings/alg-wc-ccf-options.php:332
-#: includes/settings/alg-wc-ccf-options.php:767
 #: includes/settings/class-alg-wc-ccf-settings-general.php:88
 #: includes/settings/class-alg-wc-ccf-settings-general.php:95
 #: includes/settings/class-alg-wc-ccf-settings-general.php:120
@@ -344,7 +343,7 @@ msgstr ""
 
 #: includes/settings/alg-wc-ccf-options.php:226
 #: includes/settings/alg-wc-ccf-options.php:235
-#: includes/settings/alg-wc-ccf-options.php:736
+#: includes/settings/alg-wc-ccf-options.php:743
 msgid "Ignored if set to zero."
 msgstr ""
 
@@ -794,149 +793,149 @@ msgid ""
 msgstr ""
 
 #: includes/settings/alg-wc-ccf-options.php:659
-msgid "Product shipping classes"
+#: includes/settings/alg-wc-ccf-options.php:771
+msgid "Add shipping cost to cart total"
 msgstr ""
 
 #: includes/settings/alg-wc-ccf-options.php:660
+msgid "Used for \"Min cart amount\" and \"Max cart amount\" options."
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:666
+msgid "Product shipping classes"
+msgstr ""
+
+#: includes/settings/alg-wc-ccf-options.php:667
 msgid ""
 "Show this field only if there is a product with selected shipping classes in "
 "cart. Leave blank to show for all products."
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:668
+#: includes/settings/alg-wc-ccf-options.php:675
 msgid "Virtual products"
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:674
-#: includes/settings/alg-wc-ccf-options.php:686
+#: includes/settings/alg-wc-ccf-options.php:681
+#: includes/settings/alg-wc-ccf-options.php:693
 msgid "Always show the field"
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:675
+#: includes/settings/alg-wc-ccf-options.php:682
 msgid ""
 "Show the field only if there are at least one virtual product in the cart"
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:676
+#: includes/settings/alg-wc-ccf-options.php:683
 msgid "Hide the field if there are at least one virtual product in the cart"
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:680
+#: includes/settings/alg-wc-ccf-options.php:687
 msgid "Downloadable products"
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:687
+#: includes/settings/alg-wc-ccf-options.php:694
 msgid ""
 "Show the field only if there are at least one downloadable product in the "
 "cart"
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:688
+#: includes/settings/alg-wc-ccf-options.php:695
 msgid ""
 "Hide the field if there are at least one downloadable product in the cart"
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:692
+#: includes/settings/alg-wc-ccf-options.php:699
 msgid "Countries"
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:693
+#: includes/settings/alg-wc-ccf-options.php:700
 msgid "Select all countries"
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:694
+#: includes/settings/alg-wc-ccf-options.php:701
 msgid "Deselect all countries"
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:702
+#: includes/settings/alg-wc-ccf-options.php:709
 msgid "Countries action"
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:708
+#: includes/settings/alg-wc-ccf-options.php:715
 msgid "Hide in selected countries"
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:709
+#: includes/settings/alg-wc-ccf-options.php:716
 msgid "Show in selected countries only"
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:713
+#: includes/settings/alg-wc-ccf-options.php:720
 msgid "By another field"
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:714
+#: includes/settings/alg-wc-ccf-options.php:721
 #, php-format
 msgid "E.g.: %s."
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:716
+#: includes/settings/alg-wc-ccf-options.php:723
 msgid "Visibility based on another field value. Enter field ID here."
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:728
+#: includes/settings/alg-wc-ccf-options.php:735
 msgid "Fee Options"
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:729
+#: includes/settings/alg-wc-ccf-options.php:736
 msgid ""
 "In this optional section you can set fees that are added to the cart totals "
 "in case if custom field's value is not empty."
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:734
+#: includes/settings/alg-wc-ccf-options.php:741
 msgid "Fee value"
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:735
+#: includes/settings/alg-wc-ccf-options.php:742
 msgid "Can be positive or negative."
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:743
+#: includes/settings/alg-wc-ccf-options.php:750
 msgid "Fee type"
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:748
+#: includes/settings/alg-wc-ccf-options.php:755
 msgid "Fixed"
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:749
+#: includes/settings/alg-wc-ccf-options.php:756
 msgid "Percent"
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:753
+#: includes/settings/alg-wc-ccf-options.php:760
 msgid "Percent fee: Cart total"
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:754
-#: includes/settings/alg-wc-ccf-options.php:766
+#: includes/settings/alg-wc-ccf-options.php:761
 msgid "Used only if \"Percent\" is selected in \"Fee type\"."
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:759
+#: includes/settings/alg-wc-ccf-options.php:766
 msgid "Subtotal before discounts"
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:760
+#: includes/settings/alg-wc-ccf-options.php:767
 msgid "Subtotal after discounts"
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:764
-msgid "Percent fee: Add shipping"
-msgstr ""
-
-#: includes/settings/alg-wc-ccf-options.php:765
-msgid "Adds shipping cost to cart total."
-msgstr ""
-
-#: includes/settings/alg-wc-ccf-options.php:773
+#: includes/settings/alg-wc-ccf-options.php:777
 msgid "Fee title"
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:774
+#: includes/settings/alg-wc-ccf-options.php:778
 msgid "Can be empty."
 msgstr ""
 
-#: includes/settings/alg-wc-ccf-options.php:780
+#: includes/settings/alg-wc-ccf-options.php:784
 msgid "Is fee taxable"
 msgstr ""
 
