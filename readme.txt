@@ -101,6 +101,9 @@ Add custom fields to WooCommerce checkout page.
 
 == Changelog ==
 
+= 1.7.3 - 18/07/2022 =
+* Dev - Add deploy script.
+
 = 1.7.2 - 16/07/2022 =
 * Dev - Visibility Options - Min/Max cart amount - "Add shipping cost to cart total" option added.
 * WC tested up to: 6.7.
