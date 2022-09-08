@@ -2,7 +2,7 @@
 /**
  * Custom Checkout Fields for WooCommerce - Frontend Class
  *
- * @version 1.7.2
+ * @version 1.7.3
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -570,7 +570,7 @@ class Alg_WC_CCF_Frontend {
 	/**
 	 * is_visible.
 	 *
-	 * @version 1.7.2
+	 * @version 1.7.3
 	 * @since   1.0.0
 	 *
 	 * @todo    [now] (dev) min/max cart amount: do we need to `WC()->cart->calculate_totals()`?
@@ -578,64 +578,88 @@ class Alg_WC_CCF_Frontend {
 	 * @todo    [next] (dev) move this to `Alg_WC_CCF_Frontend_Visibility` class?
 	 */
 	function is_visible( $i ) {
-		if ( apply_filters( 'alg_wc_custom_checkout_fields_always_visible_on_empty_cart', false ) && WC()->cart->is_empty() ) {
+
+		// Always visible on empty cart
+		if ( apply_filters( 'alg_wc_custom_checkout_fields_always_visible_on_empty_cart', false ) && isset( WC()->cart ) && WC()->cart->is_empty() ) {
 			// Added for "One Page Checkout" plugin compatibility
 			return true;
 		}
-		// Getting options
-		$categories_in         = alg_wc_ccf_get_field_option( 'categories_in', $i, array() );
-		$tags_in               = alg_wc_ccf_get_field_option( 'tags_in', $i, array() );
-		$products_in           = alg_wc_ccf_get_field_option( 'products_in', $i, array() );
-		$shipping_classes_in   = alg_wc_ccf_get_field_option( 'shipping_classes_in', $i, array() );
-		$virtual_products      = alg_wc_ccf_get_field_option( 'virtual_products', $i, '' );
-		$downloadable_products = alg_wc_ccf_get_field_option( 'downloadable_products', $i, '' );
-		if ( ! empty( $categories_in ) || ! empty( $tags_in ) || ! empty( $products_in ) || ! empty( $shipping_classes_in ) || '' != $virtual_products || '' != $downloadable_products ) {
-			// Getting cart product ids
-			$products   = array();
-			$variations = array();
-			foreach ( WC()->cart->get_cart() as $cart_item_key => $values ) {
-				$products[] = $this->maybe_get_product_id_wpml( $values['product_id'] );
-				if ( ! empty( $values['variation_id'] ) ) {
-					$variations[] = $this->maybe_get_product_id_wpml( $values['variation_id'] );
+
+		// Checking categories, tags, products, shipping classes, virtual products, downloadable products
+		if ( isset( WC()->cart ) ) {
+
+			// Getting options
+			$categories_in         = alg_wc_ccf_get_field_option( 'categories_in', $i, array() );
+			$tags_in               = alg_wc_ccf_get_field_option( 'tags_in', $i, array() );
+			$products_in           = alg_wc_ccf_get_field_option( 'products_in', $i, array() );
+			$shipping_classes_in   = alg_wc_ccf_get_field_option( 'shipping_classes_in', $i, array() );
+			$virtual_products      = alg_wc_ccf_get_field_option( 'virtual_products', $i, '' );
+			$downloadable_products = alg_wc_ccf_get_field_option( 'downloadable_products', $i, '' );
+
+			if (
+				! empty( $categories_in ) ||
+				! empty( $tags_in ) ||
+				! empty( $products_in ) ||
+				! empty( $shipping_classes_in ) ||
+				'' != $virtual_products ||
+				'' != $downloadable_products
+			) {
+
+				// Getting cart product ids
+				$products   = array();
+				$variations = array();
+				foreach ( WC()->cart->get_cart() as $cart_item_key => $values ) {
+					$products[] = $this->maybe_get_product_id_wpml( $values['product_id'] );
+					if ( ! empty( $values['variation_id'] ) ) {
+						$variations[] = $this->maybe_get_product_id_wpml( $values['variation_id'] );
+					}
 				}
-			}
-			// Checking categories
-			if ( ! empty( $categories_in ) ) {
-				if ( ! $this->check_products_terms( $products, $categories_in, 'product_cat' ) ) {
-					return false;
+
+				// Checking categories
+				if ( ! empty( $categories_in ) ) {
+					if ( ! $this->check_products_terms( $products, $categories_in, 'product_cat' ) ) {
+						return false;
+					}
 				}
-			}
-			// Checking tags
-			if ( ! empty( $tags_in ) ) {
-				if ( ! $this->check_products_terms( $products, $tags_in, 'product_tag' ) ) {
-					return false;
+
+				// Checking tags
+				if ( ! empty( $tags_in ) ) {
+					if ( ! $this->check_products_terms( $products, $tags_in, 'product_tag' ) ) {
+						return false;
+					}
 				}
-			}
-			// Checking products
-			if ( ! empty( $products_in ) ) {
-				if ( ! $this->check_products( $products, $variations, $products_in ) ) {
-					return false;
+
+				// Checking products
+				if ( ! empty( $products_in ) ) {
+					if ( ! $this->check_products( $products, $variations, $products_in ) ) {
+						return false;
+					}
 				}
-			}
-			// Checking shipping classes
-			if ( ! empty( $shipping_classes_in ) ) {
-				if ( ! $this->check_shipping_classes( $products, $shipping_classes_in ) ) {
-					return false;
+
+				// Checking shipping classes
+				if ( ! empty( $shipping_classes_in ) ) {
+					if ( ! $this->check_shipping_classes( $products, $shipping_classes_in ) ) {
+						return false;
+					}
 				}
-			}
-			// Checking virtual products
-			if ( '' != $virtual_products ) {
-				if ( ! $this->check_product_option( $products, 'virtual', $virtual_products ) ) {
-					return false;
+
+				// Checking virtual products
+				if ( '' != $virtual_products ) {
+					if ( ! $this->check_product_option( $products, 'virtual', $virtual_products ) ) {
+						return false;
+					}
 				}
-			}
-			// Checking downloadable products
-			if ( '' != $downloadable_products ) {
-				if ( ! $this->check_product_option( $products, 'downloadable', $downloadable_products ) ) {
-					return false;
+
+				// Checking downloadable products
+				if ( '' != $downloadable_products ) {
+					if ( ! $this->check_product_option( $products, 'downloadable', $downloadable_products ) ) {
+						return false;
+					}
 				}
+
 			}
 		}
+
 		// Checking user roles
 		$user_roles_in = alg_wc_ccf_get_field_option( 'user_roles_in', $i, array() );
 		if ( ! empty( $user_roles_in ) ) {
@@ -643,6 +667,7 @@ class Alg_WC_CCF_Frontend {
 				return false;
 			}
 		}
+
 		// Checking min/max cart amount
 		$min_cart_amount = alg_wc_ccf_get_field_option( 'min_cart_amount', $i, 0 );
 		$max_cart_amount = alg_wc_ccf_get_field_option( 'max_cart_amount', $i, 0 );
@@ -655,8 +680,10 @@ class Alg_WC_CCF_Frontend {
 				return false;
 			}
 		}
+
 		// All passed
 		return apply_filters( 'alg_wc_ccf_field_visible', true, $i, $this );
+
 	}
 
 	/**
