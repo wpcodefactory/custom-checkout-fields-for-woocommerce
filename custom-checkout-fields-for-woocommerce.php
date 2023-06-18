@@ -3,12 +3,12 @@
 Plugin Name: Custom Checkout Fields for WooCommerce
 Plugin URI: https://wpfactory.com/item/custom-checkout-fields-for-woocommerce/
 Description: Add custom fields to WooCommerce checkout page.
-Version: 1.7.3
+Version: 1.7.4
 Author: Algoritmika Ltd
 Author URI: https://algoritmika.com
 Text Domain: custom-checkout-fields-for-woocommerce
 Domain Path: /langs
-WC tested up to: 6.8
+WC tested up to: 7.8
 */
 
 defined( 'ABSPATH' ) || exit;
