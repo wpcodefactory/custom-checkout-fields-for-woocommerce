@@ -1,9 +1,9 @@
 === Custom Checkout Fields for WooCommerce ===
-Contributors: algoritmika, anbinder, omardabbas, kousikmukherjeeli
+Contributors: wpcodefactory, omardabbas, karzin, anbinder, algoritmika, kousikmukherjeeli
 Tags: woocommerce, checkout, woo commerce
 Requires at least: 4.4
-Tested up to: 6.2
-Stable tag: 1.7.4
+Tested up to: 6.3
+Stable tag: 1.7.5
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -100,6 +100,11 @@ Add custom fields to WooCommerce checkout page.
 1. Field options.
 
 == Changelog ==
+
+= 1.7.5 - 24/09/2023 =
+* WC tested up to: 8.1.
+* Tested up to: 6.3.
+* Update plugin icon, banner
 
 = 1.7.4 - 18/06/2023 =
 * WC tested up to: 7.8.
