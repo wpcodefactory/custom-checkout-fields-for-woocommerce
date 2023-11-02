@@ -1,82 +1,82 @@
-#: includes/alg-wc-ccf-functions.php:170
+#: includes/alg-wc-ccf-functions.php:173
 msgid "No shipping class"
 msgstr ""
 
-#: includes/alg-wc-ccf-functions.php:192
+#: includes/alg-wc-ccf-functions.php:195
 msgid "Guest"
-msgstr ""
-
-#: includes/alg-wc-ccf-functions.php:330
-msgctxt "enhanced select"
-msgid "No matches found"
-msgstr ""
-
-#: includes/alg-wc-ccf-functions.php:331
-msgctxt "enhanced select"
-msgid "Please enter 1 or more characters"
-msgstr ""
-
-#: includes/alg-wc-ccf-functions.php:332
-msgctxt "enhanced select"
-msgid "Please enter %qty% or more characters"
 msgstr ""
 
 #: includes/alg-wc-ccf-functions.php:333
 msgctxt "enhanced select"
-msgid "Please delete 1 character"
+msgid "No matches found"
 msgstr ""
 
 #: includes/alg-wc-ccf-functions.php:334
 msgctxt "enhanced select"
-msgid "Please delete %qty% characters"
+msgid "Please enter 1 or more characters"
 msgstr ""
 
 #: includes/alg-wc-ccf-functions.php:335
 msgctxt "enhanced select"
-msgid "Loading more results&hellip;"
+msgid "Please enter %qty% or more characters"
 msgstr ""
 
 #: includes/alg-wc-ccf-functions.php:336
 msgctxt "enhanced select"
+msgid "Please delete 1 character"
+msgstr ""
+
+#: includes/alg-wc-ccf-functions.php:337
+msgctxt "enhanced select"
+msgid "Please delete %qty% characters"
+msgstr ""
+
+#: includes/alg-wc-ccf-functions.php:338
+msgctxt "enhanced select"
+msgid "Loading more results&hellip;"
+msgstr ""
+
+#: includes/alg-wc-ccf-functions.php:339
+msgctxt "enhanced select"
 msgid "Searching&hellip;"
 msgstr ""
 
-#: includes/alg-wc-ccf-functions.php:354
+#: includes/alg-wc-ccf-functions.php:357
 msgid "Now"
 msgstr ""
 
-#: includes/alg-wc-ccf-functions.php:355
+#: includes/alg-wc-ccf-functions.php:358
 msgid "Done"
 msgstr ""
 
-#: includes/alg-wc-ccf-functions.php:356
+#: includes/alg-wc-ccf-functions.php:359
 msgid "Time"
 msgstr ""
 
-#: includes/alg-wc-ccf-functions.php:357
+#: includes/alg-wc-ccf-functions.php:360
 msgid "Hour"
 msgstr ""
 
-#: includes/alg-wc-ccf-functions.php:358
+#: includes/alg-wc-ccf-functions.php:361
 msgid "Minute"
 msgstr ""
 
-#: includes/class-alg-wc-ccf-frontend.php:725
+#: includes/class-alg-wc-ccf-frontend.php:729
 #: includes/settings/alg-wc-ccf-options.php:283
 #: includes/settings/alg-wc-ccf-options.php:785
 msgid "Yes"
 msgstr ""
 
-#: includes/class-alg-wc-ccf-frontend.php:726
+#: includes/class-alg-wc-ccf-frontend.php:730
 #: includes/settings/alg-wc-ccf-options.php:289
 msgid "No"
 msgstr ""
 
-#: includes/class-alg-wc-ccf.php:140
+#: includes/class-alg-wc-ccf.php:160
 msgid "Settings"
 msgstr ""
 
-#: includes/class-alg-wc-ccf.php:143
+#: includes/class-alg-wc-ccf.php:163
 msgid "Go Pro"
 msgstr ""
 

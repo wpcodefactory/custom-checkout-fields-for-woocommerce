@@ -3,12 +3,12 @@
 Plugin Name: Custom Checkout Fields for WooCommerce
 Plugin URI: https://wpfactory.com/item/custom-checkout-fields-for-woocommerce/
 Description: Add custom fields to WooCommerce checkout page.
-Version: 1.7.6
-Author: WPFactory
-Author URI: http://www.WPFactory.com
+Version: 1.8.0
+Author: Algoritmika Ltd
+Author URI: https://algoritmika.com
 Text Domain: custom-checkout-fields-for-woocommerce
 Domain Path: /langs
-WC tested up to: 8.1
+WC tested up to: 8.2
 */
 
 defined( 'ABSPATH' ) || exit;
@@ -17,7 +17,7 @@ if ( 'custom-checkout-fields-for-woocommerce.php' === basename( __FILE__ ) ) {
 	/**
 	 * Check if Pro plugin version is activated.
 	 *
-	 * @version 1.6.0
+	 * @version 1.8.0
 	 * @since   1.6.0
 	 */
 	$plugin = 'custom-checkout-fields-for-woocommerce-pro/custom-checkout-fields-for-woocommerce-pro.php';
@@ -25,11 +25,12 @@ if ( 'custom-checkout-fields-for-woocommerce.php' === basename( __FILE__ ) ) {
 		in_array( $plugin, (array) get_option( 'active_plugins', array() ), true ) ||
 		( is_multisite() && array_key_exists( $plugin, (array) get_site_option( 'active_sitewide_plugins', array() ) ) )
 	) {
+		defined( 'ALG_WC_CCF_FILE_FREE' ) || define( 'ALG_WC_CCF_FILE_FREE', __FILE__ );
 		return;
 	}
 }
 
-defined( 'ALG_WC_CCF_VERSION' ) || define( 'ALG_WC_CCF_VERSION', '1.7.6' );
+defined( 'ALG_WC_CCF_VERSION' ) || define( 'ALG_WC_CCF_VERSION', '1.8.0' );
 
 defined( 'ALG_WC_CCF_FILE' ) || define( 'ALG_WC_CCF_FILE', __FILE__ );
 

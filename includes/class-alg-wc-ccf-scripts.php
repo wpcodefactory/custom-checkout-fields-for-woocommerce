@@ -49,7 +49,7 @@ class Alg_WC_CCF_Scripts {
 	 * @version 1.7.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [maybe] (dev) store `//ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/base/jquery-ui.css` etc. locally?
+	 * @todo    (dev) store `//ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/base/jquery-ui.css` etc. locally?
 	 */
 	function enqueue_frontend_scripts() {
 		if ( ! is_checkout() ) {

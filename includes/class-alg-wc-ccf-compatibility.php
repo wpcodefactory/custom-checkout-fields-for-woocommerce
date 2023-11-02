@@ -20,7 +20,7 @@ class Alg_WC_CCF_Compatibility {
 	 * @version 1.0.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [later] (test) "WooCommerce – Store Exporter" - test if it's still working
+	 * @todo    (test) "WooCommerce – Store Exporter" - test if it's still working
 	 */
 	function __construct() {
 		// "WooCommerce – Store Exporter" plugin - https://wordpress.org/plugins/woocommerce-exporter/
@@ -34,7 +34,7 @@ class Alg_WC_CCF_Compatibility {
 	 * @version 1.0.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [next] [!] (dev) `duplicate`: store exporter
+	 * @todo    (dev) `duplicate`: store exporter
 	 */
 	function add_custom_fields_to_store_exporter_order( $order, $order_id ) {
 		if ( ! ( $fields_data = alg_wc_ccf_get_order_fields_data( $order_id ) ) ) {
@@ -52,7 +52,7 @@ class Alg_WC_CCF_Compatibility {
 	 * @version 1.3.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [next] [!] (dev) `duplicate`: store exporter
+	 * @todo    (dev) `duplicate`: store exporter
 	 */
 	function add_custom_fields_to_store_exporter( $fields ) {
 		for ( $i = 1; $i <= apply_filters( 'alg_wc_ccf_total_fields', 1 ); $i++ ) {

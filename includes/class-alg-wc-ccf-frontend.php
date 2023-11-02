@@ -2,7 +2,7 @@
 /**
  * Custom Checkout Fields for WooCommerce - Frontend Class
  *
- * @version 1.7.3
+ * @version 1.8.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -20,8 +20,8 @@ class Alg_WC_CCF_Frontend {
 	 * @version 1.7.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [next] (dev) PHP validation? e.g. "min/max date" for datepicker?
-	 * @todo    [next] (feature) add fields to "My Account"
+	 * @todo    (dev) PHP validation? e.g. "min/max date" for datepicker?
+	 * @todo    (feature) add fields to "My Account"
 	 */
 	function __construct() {
 		add_filter( 'woocommerce_checkout_fields',                array( $this, 'add_custom_checkout_fields' ), PHP_INT_MAX );
@@ -43,8 +43,8 @@ class Alg_WC_CCF_Frontend {
 	 * @version 1.6.3
 	 * @since   1.6.3
 	 *
-	 * @todo    [now] (dev) recheck `change input`?
-	 * @todo    [now] (dev) move this to a JS file
+	 * @todo    (dev) recheck `change input`?
+	 * @todo    (dev) move this to a JS file
 	 */
 	function visibility_by_field() {
 		for ( $i = 1; $i <= apply_filters( 'alg_wc_ccf_total_fields', 1 ); $i++ ) {
@@ -72,7 +72,7 @@ class Alg_WC_CCF_Frontend {
 	 *
 	 * @see     https://github.com/woocommerce/woocommerce/blob/5.6.0/includes/class-wc-countries.php#L1523
 	 *
-	 * @todo    [next] [!] (dev) `duplicate`: country locale
+	 * @todo    (dev) `duplicate`: country locale
 	 */
 	function billing_address_fields( $fields ) {
 		for ( $i = 1; $i <= apply_filters( 'alg_wc_ccf_total_fields', 1 ); $i++ ) {
@@ -95,7 +95,7 @@ class Alg_WC_CCF_Frontend {
 	 *
 	 * @see     https://github.com/woocommerce/woocommerce/blob/5.6.0/includes/class-wc-countries.php#L1523
 	 *
-	 * @todo    [next] [!] (dev) `duplicate`: country locale
+	 * @todo    (dev) `duplicate`: country locale
 	 */
 	function shipping_address_fields( $fields ) {
 		for ( $i = 1; $i <= apply_filters( 'alg_wc_ccf_total_fields', 1 ); $i++ ) {
@@ -113,17 +113,21 @@ class Alg_WC_CCF_Frontend {
 	/**
 	 * default_address_fields.
 	 *
-	 * @version 1.6.3
+	 * @version 1.8.0
 	 * @since   1.6.2
 	 *
 	 * @see     https://github.com/woocommerce/woocommerce/blob/5.6.0/includes/class-wc-countries.php#L765
 	 *
-	 * @todo    [now] [!] (dev) recheck `$this->is_visible( $i )` everywhere
-	 * @todo    [next] [!] (dev) `duplicate`: country locale
+	 * @todo    (dev) recheck `$this->is_visible( $i )` everywhere
+	 * @todo    (dev) `duplicate`: country locale
 	 */
 	function default_address_fields( $fields ) {
 		for ( $i = 1; $i <= apply_filters( 'alg_wc_ccf_total_fields', 1 ); $i++ ) {
-			if ( 'yes' === alg_wc_ccf_get_field_option( 'enabled', $i, 'no' ) && $this->is_visible( $i ) ) {
+			if (
+				'yes' === alg_wc_ccf_get_field_option( 'enabled',   $i, 'no' ) &&
+				'no'  === alg_wc_ccf_get_field_option( 'duplicate', $i, 'no' ) &&
+				$this->is_visible( $i )
+			) {
 				$fields[ ALG_WC_CCF_KEY . '_' . $i ] = $this->get_field( $i );
 			}
 		}
@@ -136,7 +140,7 @@ class Alg_WC_CCF_Frontend {
 	 * @version 1.4.0
 	 * @since   1.4.0
 	 *
-	 * @todo    [next] [!] (dev) `duplicate`: country locale
+	 * @todo    (dev) `duplicate`: country locale
 	 */
 	function country_locale_field_selectors( $locale_fields ) {
 		for ( $i = 1; $i <= apply_filters( 'alg_wc_ccf_total_fields', 1 ); $i++ ) {
@@ -158,8 +162,8 @@ class Alg_WC_CCF_Frontend {
 	 * @version 1.4.0
 	 * @since   1.4.0
 	 *
-	 * @todo    [next] [!] (dev) `duplicate`: country locale
-	 * @todo    [later] (important) maybe rewrite `show` action part, e.g. see `woocommerce_get_country_locale_default` filter
+	 * @todo    (dev) `duplicate`: country locale
+	 * @todo    (important) maybe rewrite `show` action part, e.g. see `woocommerce_get_country_locale_default` filter
 	 */
 	function get_country_locale( $country_locale ) {
 		for ( $i = 1; $i <= apply_filters( 'alg_wc_ccf_total_fields', 1 ); $i++ ) {
@@ -192,9 +196,9 @@ class Alg_WC_CCF_Frontend {
 	 * @version 1.7.2
 	 * @since   1.2.0
 	 *
-	 * @todo    [later] check why `get_cart_contents_total()` returns wrong value (e.g. `100` -> `99.99`)
-	 * @todo    [maybe] (feature) percent fee: optionally add taxes to `$total` (i.e. `get_subtotal_tax()`, `get_cart_contents_tax()`, `get_shipping_tax()`)
-	 * @todo    [maybe] (feature) customizable `tax_class`
+	 * @todo    (dev) check why `get_cart_contents_total()` returns wrong value (e.g. `100` -> `99.99`)
+	 * @todo    (feature) percent fee: optionally add taxes to `$total` (i.e. `get_subtotal_tax()`, `get_cart_contents_tax()`, `get_shipping_tax()`)
+	 * @todo    (feature) customizable `tax_class`
 	 */
 	function add_fees( $cart ) {
 		$fees_to_add = array();
@@ -259,16 +263,16 @@ class Alg_WC_CCF_Frontend {
 	 * @version 1.7.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [now] (dev) `default`: `multiselect`: allow comma-separated list?
-	 * @todo    [now] (dev) `placeholder`: `select`: do we really need to add it as select option?
-	 * @todo    [now] (dev) "Change `type` to `text`": rethink this?
-	 * @todo    [next] (dev) `duplicate`: do not display item number in `label_suffix` if there is only one item?
-	 * @todo    [next] (dev) recheck zero priority + duplicate
-	 * @todo    [next] use `$field['placeholder']` instead of `alg_wc_ccf_get_field_option( 'placeholder', $field_nr, '' )`?
-	 * @todo    [next] code refactoring: do we really need to check for `array() != $excludedays` etc.
-	 * @todo    [maybe] (important) sanitize keys for `select` and `radio` (`alg_wc_ccf_get_select_options()`) - `default` also needs to be sanitized then
-	 * @todo    [later] (feature) default values for datepicker, timepicker etc. (e.g. `today`, `today + 3 days` etc.)
-	 * @todo    [later] (feature) add option for "not pre-populate"
+	 * @todo    (dev) `default`: `multiselect`: allow comma-separated list?
+	 * @todo    (dev) `placeholder`: `select`: do we really need to add it as select option?
+	 * @todo    (dev) "Change `type` to `text`": rethink this?
+	 * @todo    (dev) `duplicate`: do not display item number in `label_suffix` if there is only one item?
+	 * @todo    (dev) recheck zero priority + duplicate
+	 * @todo    (dev) use `$field['placeholder']` instead of `alg_wc_ccf_get_field_option( 'placeholder', $field_nr, '' )`?
+	 * @todo    (dev) code refactoring: do we really need to check for `array() != $excludedays` etc.
+	 * @todo    (important) sanitize keys for `select` and `radio` (`alg_wc_ccf_get_select_options()`) - `default` also needs to be sanitized then
+	 * @todo    (feature) default values for datepicker, timepicker etc. (e.g. `today`, `today + 3 days` etc.)
+	 * @todo    (feature) add option for "not pre-populate"
 	 */
 	function get_field( $field_nr, $data = false ) {
 		$type = alg_wc_ccf_get_field_option( 'type', $field_nr, 'text' );
@@ -389,8 +393,8 @@ class Alg_WC_CCF_Frontend {
 	 * @version 1.6.0
 	 * @since   1.6.0
 	 *
-	 * @todo    [next] (dev) redo into `get_fields()`?
-	 * @todo    [next] (dev) `duplicate`: maybe use `product_nr` and `product_item_nr` instead of `cart_item_key`?
+	 * @todo    (dev) redo into `get_fields()`?
+	 * @todo    (dev) `duplicate`: maybe use `product_nr` and `product_item_nr` instead of `cart_item_key`?
 	 */
 	function get_field_data( $i ) {
 		$data      = array();
@@ -435,7 +439,7 @@ class Alg_WC_CCF_Frontend {
 	 *
 	 * @see     https://github.com/woocommerce/woocommerce/blob/5.6.0/includes/class-wc-checkout.php#L265
 	 *
-	 * @todo    [next] (dev) `duplicate`: recheck if `priority` can be decimal?
+	 * @todo    (dev) `duplicate`: recheck if `priority` can be decimal?
 	 */
 	function add_custom_checkout_fields( $fields ) {
 		for ( $i = 1; $i <= apply_filters( 'alg_wc_ccf_total_fields', 1 ); $i++ ) {
@@ -573,9 +577,9 @@ class Alg_WC_CCF_Frontend {
 	 * @version 1.7.3
 	 * @since   1.0.0
 	 *
-	 * @todo    [now] (dev) min/max cart amount: do we need to `WC()->cart->calculate_totals()`?
-	 * @todo    [maybe] (dev) `alg_wc_ccf_field_visible`: rename to `alg_wc_custom_checkout_fields_field_visible`?
-	 * @todo    [next] (dev) move this to `Alg_WC_CCF_Frontend_Visibility` class?
+	 * @todo    (dev) min/max cart amount: do we need to `WC()->cart->calculate_totals()`?
+	 * @todo    (dev) `alg_wc_ccf_field_visible`: rename to `alg_wc_custom_checkout_fields_field_visible`?
+	 * @todo    (dev) move this to `Alg_WC_CCF_Frontend_Visibility` class?
 	 */
 	function is_visible( $i ) {
 
@@ -692,7 +696,7 @@ class Alg_WC_CCF_Frontend {
 	 * @version 1.0.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [now] (dev) `'woocommerce_form_field_' . 'number'` etc. instead of `'woocommerce_form_field_' . 'text'`
+	 * @todo    (dev) `'woocommerce_form_field_' . 'number'` etc. instead of `'woocommerce_form_field_' . 'text'`
 	 */
 	function woocommerce_form_field_type_convert( $field, $key, $args, $value ) {
 		if ( isset( $args['custom_attributes']['display'] ) && in_array( $args['custom_attributes']['display'], array( 'number', 'color', 'search', 'url', 'range' ) ) ) {
@@ -730,24 +734,27 @@ class Alg_WC_CCF_Frontend {
 	/**
 	 * update_custom_checkout_fields_order_meta.
 	 *
-	 * @version 1.6.0
+	 * @version 1.8.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [maybe] customizable `$value_meta_key`?
-	 * @todo    [maybe] save all options instead, i.e. `$field_data = alg_get_field_data( $i );`
+	 * @todo    (dev) customizable `$value_meta_key`?
+	 * @todo    (dev) save all options instead, i.e. `$field_data = alg_get_field_data( $i );`
 	 */
 	function update_custom_checkout_fields_order_meta( $order_id ) {
 		$fields_data = array();
 		for ( $i = 1; $i <= apply_filters( 'alg_wc_ccf_total_fields', 1 ); $i++ ) {
 			if ( 'yes' === alg_wc_ccf_get_field_option( 'enabled', $i, 'no' ) ) {
-				$section     = alg_wc_ccf_get_field_option( 'section', $i, 'billing' );
-				$type        = alg_wc_ccf_get_field_option( 'type', $i, 'text' );
+				$section = alg_wc_ccf_get_field_option( 'section', $i, 'billing' );
+				$type    = alg_wc_ccf_get_field_option( 'type', $i, 'text' );
 				foreach ( $this->get_field_data( $i ) as $key => $data ) {
 					$option_name = $section . '_' . $key;
 					if ( isset( $_POST[ $option_name ] ) || ( 'checkbox' === $type && $this->is_visible( $i ) ) ) {
 						$value = ( 'checkbox' === $type ? $this->get_checkbox_display_value( isset( $_POST[ $option_name ] ), $i ) : wc_clean( $_POST[ $option_name ] ) );
 						$value_meta_key = '_' . $option_name;
-						update_post_meta( $order_id, $value_meta_key, $value );
+						if ( ( $order = wc_get_order( $order_id ) ) ) {
+							$order->update_meta_data( $value_meta_key, $value );
+							$order->save();
+						}
 						$field_data = array(
 							'section'              => $section,
 							'type'                 => $type,

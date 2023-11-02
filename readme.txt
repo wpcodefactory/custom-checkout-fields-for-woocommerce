@@ -1,9 +1,9 @@
 === Custom Checkout Fields for WooCommerce ===
-Contributors: wpcodefactory, omardabbas, karzin, anbinder, algoritmika, kousikmukherjeeli
+Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas, kousikmukherjeeli
 Tags: woocommerce, checkout, woo commerce
 Requires at least: 4.4
 Tested up to: 6.3
-Stable tag: 1.7.6
+Stable tag: 1.8.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -89,6 +89,10 @@ Add custom fields to WooCommerce checkout page.
 * We are open to your suggestions and feedback. Thank you for using or trying out one of our plugins!
 * [Visit plugin site](https://wpfactory.com/item/custom-checkout-fields-for-woocommerce/).
 
+= &#8505; More =
+
+* The plugin is **"High-Performance Order Storage (HPOS)"** compatible.
+
 == Installation ==
 
 1. Upload the entire plugin folder to the `/wp-content/plugins/` directory.
@@ -101,13 +105,18 @@ Add custom fields to WooCommerce checkout page.
 
 == Changelog ==
 
+= 1.8.0 - 02/11/2023 =
+* Fix - Duplicate - Extra/unnecessary field removed.
+* Dev – "High-Performance Order Storage (HPOS)" compatibility.
+* WC tested up to: 8.2.
+
 = 1.7.6 - 03/10/2023 =
-* Update plugin author.
+* Plugin author updated.
 
 = 1.7.5 - 24/09/2023 =
 * WC tested up to: 8.1.
 * Tested up to: 6.3.
-* Update plugin icon, banner
+* Plugin icon, banner updated.
 
 = 1.7.4 - 18/06/2023 =
 * WC tested up to: 7.8.

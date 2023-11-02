@@ -2,7 +2,7 @@
 /**
  * Custom Checkout Fields for WooCommerce - Main Class
  *
- * @version 1.6.3
+ * @version 1.8.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -41,15 +41,15 @@ final class Alg_WC_CCF {
 	/**
 	 * Alg_WC_CCF Constructor.
 	 *
-	 * @version 1.6.3
+	 * @version 1.8.0
 	 * @since   1.0.0
 	 *
 	 * @access  public
 	 *
-	 * @todo    [now] (desc) update readme, e.g. "duplicate", etc.
-	 * @todo    [now] (feature) customizable `ALG_WC_CCF_ID`?
-	 * @todo    [later] (feature) settings reset (options and/or order meta)
-	 * @todo    [maybe] (dev) text domain: remove 'woocommerce' *everywhere*
+	 * @todo    (desc) update readme, e.g. "duplicate", etc.
+	 * @todo    (feature) customizable `ALG_WC_CCF_ID`?
+	 * @todo    (feature) settings reset (options and/or order meta)
+	 * @todo    (dev) text domain: remove 'woocommerce' *everywhere*
 	 */
 	function __construct() {
 
@@ -64,6 +64,9 @@ final class Alg_WC_CCF {
 
 		// Set up localisation
 		add_action( 'init', array( $this, 'localize' ) );
+
+		// Declare compatibility with custom order tables for WooCommerce
+		add_action( 'before_woocommerce_init', array( $this, 'wc_declare_compatibility' ) );
 
 		// Pro
 		if ( 'custom-checkout-fields-for-woocommerce-pro.php' === basename( ALG_WC_CCF_FILE ) ) {
@@ -87,6 +90,23 @@ final class Alg_WC_CCF {
 	 */
 	function localize() {
 		load_plugin_textdomain( 'custom-checkout-fields-for-woocommerce', false, dirname( plugin_basename( ALG_WC_CCF_FILE ) ) . '/langs/' );
+	}
+
+	/**
+	 * wc_declare_compatibility.
+	 *
+	 * @version 1.8.0
+	 * @since   1.8.0
+	 *
+	 * @see     https://github.com/woocommerce/woocommerce/wiki/High-Performance-Order-Storage-Upgrade-Recipe-Book#declaring-extension-incompatibility
+	 */
+	function wc_declare_compatibility() {
+		if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
+			$files = ( defined( 'ALG_WC_CCF_FILE_FREE' ) ? array( ALG_WC_CCF_FILE, ALG_WC_CCF_FILE_FREE ) : array( ALG_WC_CCF_FILE ) );
+			foreach ( $files as $file ) {
+				\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', $file, true );
+			}
+		}
 	}
 
 	/**

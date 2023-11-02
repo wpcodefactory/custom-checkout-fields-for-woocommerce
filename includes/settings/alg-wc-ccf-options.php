@@ -17,31 +17,31 @@ if ( ! function_exists( 'alg_get_wc_ccf_options' ) ) {
 	 * @version 1.7.2
 	 * @since   1.0.0
 	 *
-	 * @todo    [now] [!] (dev) `Select2`: `radio` (move it to a separate subsection, e.g. "Select2 Options")?
-	 * @todo    [next] (dev) `$products`: always use AJAX (i.e. not only on `WC()->version, '5.7.1', '>='`)
-	 * @todo    [now] (feature) `type`: non-editable static text?
-	 * @todo    [now] (desc) `$section_message`
-	 * @todo    [next] (dev) `placeholder`: make `text` (now is `textarea`)?
-	 * @todo    [next] (desc) `default_prepopulate`: better title and desc
-	 * @todo    [maybe] (desc) `customer_meta_fields`: better desc?
-	 * @todo    [next] [!] add new "Localization" section?
-	 * @todo    [next] [!] restyle: e.g. select2: from desc to title?
-	 * @todo    [next] [!] store all in array, e.g. `alg_wc_ccf_1[type]` instead of `alg_wc_ccf_type_1` || move from options to custom post types
-	 * @todo    [next] type: `datalist` (https://www.w3schools.com/tags/tag_datalist.asp)
-	 * @todo    [next] editable `select` option with jquery (https://stackoverflow.com/questions/5650457/html-select-form-with-option-to-enter-custom-value) (i.e. instead of `is_tagging` in `select2` (https://select2.org/tagging))?
-	 * @todo    [now] (feature) Visibility Options: By another field: predefined fields
-	 * @todo    [now] (feature) Visibility Options: By another field: multiple fields
-	 * @todo    [later] Select2: Custom text: better descriptions
-	 * @todo    [later] (desc) `priority`: better description (i.e. list more current (core) fields priorities)
-	 * @todo    [next] (dev) `priority`: `'custom_attributes' => array( 'min' => 0 )`?
-	 * @todo    [maybe] standard HTML date/time picker(s)
-	 * @todo    [later] (feature) (important) Visibility Options - Categories, Tags, Products - comma separated IDs instead of multiselect
-	 * @todo    [later] (feature) `pattern` attribute (https://www.w3schools.com/tags/att_input_pattern.asp)
-	 * @todo    [later] (feature) (WC) `validate`
-	 * @todo    [later] (feature) Visibility Options - by payment gateways
-	 * @todo    [later] (feature) Visibility Options - by shipping method
-	 * @todo    [later] (feature) Visibility Options - by users (i.e. not user roles)
-	 * @todo    [later] (feature) Visibility Options - ... to *hide*
+	 * @todo    (dev) `Select2`: `radio` (move it to a separate subsection, e.g. "Select2 Options")?
+	 * @todo    (dev) `$products`: always use AJAX (i.e. not only on `WC()->version, '5.7.1', '>='`)
+	 * @todo    (feature) `type`: non-editable static text?
+	 * @todo    (desc) `$section_message`
+	 * @todo    (dev) `placeholder`: make `text` (now is `textarea`)?
+	 * @todo    (desc) `default_prepopulate`: better title and desc
+	 * @todo    (desc) `customer_meta_fields`: better desc?
+	 * @todo    (dev) add new "Localization" section?
+	 * @todo    (dev) restyle: e.g. select2: from desc to title?
+	 * @todo    (dev) store all in array, e.g. `alg_wc_ccf_1[type]` instead of `alg_wc_ccf_type_1` || move from options to custom post types
+	 * @todo    (dev) type: `datalist` (https://www.w3schools.com/tags/tag_datalist.asp)
+	 * @todo    (dev) editable `select` option with jquery (https://stackoverflow.com/questions/5650457/html-select-form-with-option-to-enter-custom-value) (i.e. instead of `is_tagging` in `select2` (https://select2.org/tagging))?
+	 * @todo    (feature) Visibility Options: By another field: predefined fields
+	 * @todo    (feature) Visibility Options: By another field: multiple fields
+	 * @todo    (dev) Select2: Custom text: better descriptions
+	 * @todo    (desc) `priority`: better description (i.e. list more current (core) fields priorities)
+	 * @todo    (dev) `priority`: `'custom_attributes' => array( 'min' => 0 )`?
+	 * @todo    (dev) standard HTML date/time picker(s)
+	 * @todo    (feature) (important) Visibility Options - Categories, Tags, Products - comma separated IDs instead of multiselect
+	 * @todo    (feature) `pattern` attribute (https://www.w3schools.com/tags/att_input_pattern.asp)
+	 * @todo    (feature) (WC) `validate`
+	 * @todo    (feature) Visibility Options - by payment gateways
+	 * @todo    (feature) Visibility Options - by shipping method
+	 * @todo    (feature) Visibility Options - by users (i.e. not user roles)
+	 * @todo    (feature) Visibility Options - ... to *hide*
 	 */
 	function alg_get_wc_ccf_options() {
 

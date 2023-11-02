@@ -42,12 +42,12 @@ class Alg_WC_CCF_Settings_General extends Alg_WC_CCF_Settings_Section {
 	 * @version 1.6.3
 	 * @since   1.0.0
 	 *
-	 * @todo    [now] (desc) move everything except `enabled` and `total_number` to a separate settings section, e.g. "Advanced"?
-	 * @todo    [now] (desc) `key`
-	 * @todo    [next] (dev) `hide_unrelated_type_options`: default to `yes`
-	 * @todo    [next] (desc) Label template for duplicated fields: better descriptions
-	 * @todo    [next] (desc) `total_number`: better title?
-	 * @todo    [later] (feature) add optional different fields settings view (i.e. by option types, instead of by fields)
+	 * @todo    (desc) move everything except `enabled` and `total_number` to a separate settings section, e.g. "Advanced"?
+	 * @todo    (desc) `key`
+	 * @todo    (dev) `hide_unrelated_type_options`: default to `yes`
+	 * @todo    (desc) Label template for duplicated fields: better descriptions
+	 * @todo    (desc) `total_number`: better title?
+	 * @todo    (feature) add optional different fields settings view (i.e. by option types, instead of by fields)
 	 */
 	function get_settings() {
 		$settings = array(

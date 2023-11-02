@@ -33,7 +33,7 @@ class Alg_WC_CCF_Settings_Field extends Alg_WC_CCF_Settings_Section {
 	 * @version 1.7.0
 	 * @since   1.6.3
 	 *
-	 * @todo    [now] (dev) move this to a JS file
+	 * @todo    (dev) move this to a JS file
 	 */
 	function admin_script() {
 		?><script>

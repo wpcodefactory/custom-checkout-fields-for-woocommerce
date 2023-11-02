@@ -19,9 +19,9 @@ jQuery( document ).ready( function() {
 	 * @see     timepicker addon: https://github.com/trentrichardson/jQuery-Timepicker-Addon
 	 * @see     timepicker addon: https://trentrichardson.com/examples/timepicker/
 	 *
-	 * @todo    [next] datepicker: localization
-	 * @todo    [next] timepicker addon: use `wp_localize_script()` instead of custom HTML attributes
-	 * @todo    [maybe] hide weekends with CSS: https://stackoverflow.com/questions/501943/can-the-jquery-ui-datepicker-be-made-to-disable-saturdays-and-sundays-and-holid
+	 * @todo    (dev) datepicker: localization
+	 * @todo    (dev) timepicker addon: use `wp_localize_script()` instead of custom HTML attributes
+	 * @todo    (dev) hide weekends with CSS: https://stackoverflow.com/questions/501943/can-the-jquery-ui-datepicker-be-made-to-disable-saturdays-and-sundays-and-holid
 	 */
 	jQuery( "input[display='date']" ).each( function() {
 		var mindate = jQuery( this ).attr( "mindate" );

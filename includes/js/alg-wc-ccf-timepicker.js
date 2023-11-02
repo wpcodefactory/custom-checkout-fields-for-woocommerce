@@ -14,7 +14,7 @@ jQuery( document ).ready( function() {
 	 * @version 1.0.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [next] localization
+	 * @todo    (dev) localization
 	 */
 	jQuery( "input[display='time']" ).each( function() {
 		jQuery( this ).timepicker( {

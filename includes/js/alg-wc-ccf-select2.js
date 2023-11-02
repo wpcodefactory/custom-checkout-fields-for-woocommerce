@@ -14,8 +14,8 @@ jQuery( document ).ready( function() {
 	 * @version 1.4.7
 	 * @since   1.0.0
 	 *
-	 * @todo    [maybe] use `selectWoo` instead of `select2` (optionally)
-	 * @todo    [maybe] load full translation files (optionally)
+	 * @todo    (dev) use `selectWoo` instead of `select2` (optionally)
+	 * @todo    (dev) load full translation files (optionally)
 	 */
 	for ( var i = 0, len = alg_wc_ccf_select2.fields.length; i < len; i++ ) {
 		var alg_wc_ccf_select2_field = alg_wc_ccf_select2.fields[i];

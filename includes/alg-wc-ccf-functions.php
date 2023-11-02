@@ -2,7 +2,7 @@
 /**
  * Custom Checkout Fields for WooCommerce - Functions
  *
- * @version 1.6.5
+ * @version 1.8.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -29,7 +29,7 @@ if ( ! function_exists( 'alg_wc_ccf_get_field_option' ) ) {
 	 * @version 1.6.1
 	 * @since   1.0.0
 	 *
-	 * @todo    [maybe] add more fields to `do_shortcode()`, e.g. `type_select_options`, `type_select_select2_i18n_no_matches` etc.?
+	 * @todo    (dev) add more fields to `do_shortcode()`, e.g. `type_select_options`, `type_select_select2_i18n_no_matches` etc.?
 	 */
 	function alg_wc_ccf_get_field_option( $option, $field_nr, $default = false, $context = '' ) {
 		$result = alg_wc_ccf_get_option( $option . '_' . $field_nr, $default );
@@ -54,13 +54,16 @@ if ( ! function_exists( 'alg_wc_ccf_update_order_fields_data' ) ) {
 	/*
 	 * alg_wc_ccf_update_order_fields_data.
 	 *
-	 * @version 1.0.0
+	 * @version 1.8.0
 	 * @since   1.0.0
 	 *
 	 * @return  array
 	 */
 	function alg_wc_ccf_update_order_fields_data( $order_id, $fields_data ) {
-		update_post_meta( $order_id, '_' . ALG_WC_CCF_ID . '_data', $fields_data );
+		if ( ( $order = wc_get_order( $order_id ) ) ) {
+			$order->update_meta_data( '_' . ALG_WC_CCF_ID . '_data', $fields_data );
+			$order->save();
+		}
 	}
 }
 
@@ -68,13 +71,13 @@ if ( ! function_exists( 'alg_wc_ccf_get_order_fields_data' ) ) {
 	/*
 	 * alg_wc_ccf_get_order_fields_data.
 	 *
-	 * @version 1.0.0
+	 * @version 1.8.0
 	 * @since   1.0.0
 	 *
 	 * @return  array
 	 */
 	function alg_wc_ccf_get_order_fields_data( $order_id ) {
-		return get_post_meta( $order_id, '_' . ALG_WC_CCF_ID . '_data', true );
+		return ( ( $order = wc_get_order( $order_id ) ) ? $order->get_meta( '_' . ALG_WC_CCF_ID . '_data' ) : '' );
 	}
 }
 
@@ -127,7 +130,7 @@ if ( ! function_exists( 'alg_wc_ccf_get_products' ) ) {
 	 * @version 1.6.5
 	 * @since   1.0.0
 	 *
-	 * @todo    [maybe] (feature) `product_variation`: make it optional? (also in AJAX replace `woocommerce_json_search_products_and_variations` with `woocommerce_json_search_products`)
+	 * @todo    (feature) `product_variation`: make it optional? (also in AJAX replace `woocommerce_json_search_products_and_variations` with `woocommerce_json_search_products`)
 	 */
 	function alg_wc_ccf_get_products( $products = array(), $post_status = 'any' ) {
 		$offset     = 0;
@@ -257,7 +260,7 @@ if ( ! function_exists( 'alg_wc_ccf_date_format_php_to_js' ) ) {
 	 *
 	 * @see     http://stackoverflow.com/questions/16702398/convert-a-php-date-format-to-a-jqueryui-datepicker-date-format
 	 *
-	 * @todo    [maybe] time
+	 * @todo    (dev) time
 	 */
 	function alg_wc_ccf_date_format_php_to_js( $php_format ) {
 		$symbols_matching = array(
@@ -322,8 +325,8 @@ if ( ! function_exists( 'alg_wc_ccf_get_select2_i18n_options' ) ) {
 	 * @version 1.4.1
 	 * @since   1.4.1
 	 *
-	 * @todo    [maybe] `i18n_ajax_error` (JS: `errorLoading`)
-	 * @todo    [maybe] `i18n_selection_too_long_1`, `i18n_selection_too_long_n` (JS: `maximumSelected`) (for multiselect)
+	 * @todo    (dev) `i18n_ajax_error` (JS: `errorLoading`)
+	 * @todo    (dev) `i18n_selection_too_long_1`, `i18n_selection_too_long_n` (JS: `maximumSelected`) (for multiselect)
 	 */
 	function alg_wc_ccf_get_select2_i18n_options() {
 		return array(
@@ -347,7 +350,7 @@ if ( ! function_exists( 'alg_wc_ccf_get_datepicker_timepicker_addon_i18n_options
 	 *
 	 * @see     https://trentrichardson.com/examples/timepicker/#tp-options
 	 *
-	 * @todo    [next] [!] add more options
+	 * @todo    (dev) add more options
 	 */
 	function alg_wc_ccf_get_datepicker_timepicker_addon_i18n_options() {
 		return array(

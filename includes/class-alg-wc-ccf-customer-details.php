@@ -20,7 +20,7 @@ class Alg_WC_CCF_Customer_Details {
 	 * @version 1.3.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [next] [!] (dev) `duplicate`: default field value
+	 * @todo    (dev) `duplicate`: default field value
 	 */
 	function __construct() {
 		add_filter( 'woocommerce_customer_meta_fields', array( $this, 'add_checkout_custom_fields_customer_meta_fields' ), PHP_INT_MAX );
@@ -38,7 +38,7 @@ class Alg_WC_CCF_Customer_Details {
 	 * @version 1.7.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [next] [!] (dev) `duplicate`: user profile fields
+	 * @todo    (dev) `duplicate`: user profile fields
 	 */
 	function add_checkout_custom_fields_customer_meta_fields( $fields ) {
 		for ( $i = 1; $i <= apply_filters( 'alg_wc_ccf_total_fields', 1 ); $i++ ) {

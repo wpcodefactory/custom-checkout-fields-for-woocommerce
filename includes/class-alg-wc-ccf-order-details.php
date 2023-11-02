@@ -52,7 +52,7 @@ class Alg_WC_CCF_Order_Details {
 	 * @version 1.7.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [now] [!] (dev) `if ( '' != $field_data['label'] || '' != $field_data['_value'] ) { ... }`?
+	 * @todo    (dev) `if ( '' != $field_data['label'] || '' != $field_data['_value'] ) { ... }`?
 	 */
 	function add_custom_fields_to_order_display( $order, $section = '', $templates = array( 'before' => '', 'field' => '', 'after' => '' ) ) {
 		if ( ! ( $fields_data = alg_wc_ccf_get_order_fields_data( $this->get_order_id( $order ) ) ) ) {
@@ -83,7 +83,7 @@ class Alg_WC_CCF_Order_Details {
 	 * @version 1.7.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [now] [!] (desc) `$fields[ $key ]['show'] = false;`
+	 * @todo    (desc) `$fields[ $key ]['show'] = false;`
 	 */
 	function add_woocommerce_admin_fields( $fields, $section ) {
 		if ( ! ( $order_id = get_the_ID() ) ) {
@@ -170,7 +170,7 @@ class Alg_WC_CCF_Order_Details {
 	 * @version 1.0.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [maybe] somehow use `$this->add_woocommerce_admin_fields()` instead of `$this->add_custom_fields_to_order_display()` (otherwise these fields are not editable)
+	 * @todo    (dev) somehow use `$this->add_woocommerce_admin_fields()` instead of `$this->add_custom_fields_to_order_display()` (otherwise these fields are not editable)
 	 */
 	function add_custom_order_and_account_fields_to_admin_order_display( $order ) {
 		$templates = array(
