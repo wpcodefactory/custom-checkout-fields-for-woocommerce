@@ -2,7 +2,7 @@
 /**
  * Custom Checkout Fields for WooCommerce - All Products Section Settings - Field
  *
- * @version 1.7.0
+ * @version 1.8.1
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -13,6 +13,14 @@ defined( 'ABSPATH' ) || exit;
 if ( ! class_exists( 'Alg_WC_CCF_Settings_Field' ) ) :
 
 class Alg_WC_CCF_Settings_Field extends Alg_WC_CCF_Settings_Section {
+
+	/**
+	 * field_nr.
+	 *
+	 * @version 1.8.1
+	 * @since   1.0.0
+	 */
+	public $field_nr;
 
 	/**
 	 * Constructor.

@@ -91,7 +91,7 @@ msgid "Fill this section only if %s type is selected."
 msgstr ""
 
 #: includes/settings/alg-wc-ccf-options.php:62
-#: includes/settings/class-alg-wc-ccf-settings-field.php:25
+#: includes/settings/class-alg-wc-ccf-settings-field.php:33
 msgid "Field"
 msgstr ""
 

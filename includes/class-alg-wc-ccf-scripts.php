@@ -2,7 +2,7 @@
 /**
  * Custom Checkout Fields for WooCommerce - Scripts Class
  *
- * @version 1.7.0
+ * @version 1.8.1
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -13,6 +13,14 @@ defined( 'ABSPATH' ) || exit;
 if ( ! class_exists( 'Alg_WC_CCF_Scripts' ) ) :
 
 class Alg_WC_CCF_Scripts {
+
+	/**
+	 * min_suffix.
+	 *
+	 * @version 1.8.1
+	 * @since   1.4.5
+	 */
+	public $min_suffix;
 
 	/**
 	 * Constructor.

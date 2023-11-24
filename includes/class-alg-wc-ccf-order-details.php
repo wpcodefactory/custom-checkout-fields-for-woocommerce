@@ -2,7 +2,7 @@
 /**
  * Custom Checkout Fields for WooCommerce - Order Details Class
  *
- * @version 1.7.0
+ * @version 1.8.1
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -13,6 +13,14 @@ defined( 'ABSPATH' ) || exit;
 if ( ! class_exists( 'Alg_WC_CCF_Order_Details' ) ) :
 
 class Alg_WC_CCF_Order_Details {
+
+	/**
+	 * is_wc_version_below_3_0_0.
+	 *
+	 * @version 1.8.1
+	 * @since   1.0.0
+	 */
+	public $is_wc_version_below_3_0_0;
 
 	/**
 	 * Constructor.
