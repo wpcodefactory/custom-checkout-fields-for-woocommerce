@@ -3,7 +3,7 @@
 Plugin Name: Custom Checkout Fields for WooCommerce
 Plugin URI: https://wpfactory.com/item/custom-checkout-fields-for-woocommerce/
 Description: Add custom fields to WooCommerce checkout page.
-Version: 1.8.2
+Version: 1.8.3
 Author: WPFactory
 Author URI: https://wpfactory.com
 Text Domain: custom-checkout-fields-for-woocommerce
@@ -31,7 +31,7 @@ if ( 'custom-checkout-fields-for-woocommerce.php' === basename( __FILE__ ) ) {
 	}
 }
 
-defined( 'ALG_WC_CCF_VERSION' ) || define( 'ALG_WC_CCF_VERSION', '1.8.2' );
+defined( 'ALG_WC_CCF_VERSION' ) || define( 'ALG_WC_CCF_VERSION', '1.8.3' );
 
 defined( 'ALG_WC_CCF_FILE' ) || define( 'ALG_WC_CCF_FILE', __FILE__ );
 

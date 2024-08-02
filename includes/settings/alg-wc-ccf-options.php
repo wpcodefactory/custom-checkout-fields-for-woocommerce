@@ -2,7 +2,7 @@
 /**
  * Custom Checkout Fields for WooCommerce - Options
  *
- * @version 1.7.2
+ * @version 1.8.3
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -14,7 +14,7 @@ if ( ! function_exists( 'alg_get_wc_ccf_options' ) ) {
 	/**
 	 * alg_get_wc_ccf_options.
 	 *
-	 * @version 1.7.2
+	 * @version 1.8.3
 	 * @since   1.0.0
 	 *
 	 * @todo    (dev) `Select2`: `radio` (move it to a separate subsection, e.g. "Select2 Options")?
@@ -722,6 +722,22 @@ if ( ! function_exists( 'alg_get_wc_ccf_options' ) ) {
 					'<code>billing_' . ALG_WC_CCF_KEY . '_' . ( isset( $_GET['section'] ) && 'field_1' === wc_clean( $_GET['section'] ) ? '2' : '1' ) . '</code>' ),
 				'desc_tip' => __( 'Visibility based on another field value. Enter field ID here.', 'custom-checkout-fields-for-woocommerce' ),
 				'id'       => 'visibility_by_field',
+				'default'  => '',
+				'type'     => 'text',
+			),
+			array(
+				'id'       => 'visibility_by_field_action',
+				'default'  => 'not_empty',
+				'type'     => 'select',
+				'class'    => 'chosen_select',
+				'options'  => array(
+					'not_empty'   => __( 'Check if not empty', 'custom-checkout-fields-for-woocommerce' ),
+					'exact_value' => __( 'Check for an exact value', 'custom-checkout-fields-for-woocommerce' ),
+				),
+			),
+			array(
+				'desc_tip' => __( 'Exact value. Ignored unless the action is set to "Check for an exact value".', 'custom-checkout-fields-for-woocommerce' ),
+				'id'       => 'visibility_by_field_exact_value',
 				'default'  => '',
 				'type'     => 'text',
 			),

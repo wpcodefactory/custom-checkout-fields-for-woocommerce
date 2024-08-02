@@ -2,7 +2,7 @@
 /**
  * Custom Checkout Fields for WooCommerce - Frontend Class
  *
- * @version 1.8.0
+ * @version 1.8.3
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -40,7 +40,7 @@ class Alg_WC_CCF_Frontend {
 	/**
 	 * visibility_by_field.
 	 *
-	 * @version 1.6.3
+	 * @version 1.8.3
 	 * @since   1.6.3
 	 *
 	 * @todo    (dev) recheck `change input`?
@@ -50,11 +50,27 @@ class Alg_WC_CCF_Frontend {
 		for ( $i = 1; $i <= apply_filters( 'alg_wc_ccf_total_fields', 1 ); $i++ ) {
 			if ( 'yes' === alg_wc_ccf_get_field_option( 'enabled', $i, 'no' ) ) {
 				if ( '' !== ( $visibility_by_field = alg_wc_ccf_get_field_option( 'visibility_by_field', $i, '' ) ) ) {
+					$action      = alg_wc_ccf_get_field_option( 'visibility_by_field_action', $i, 'not_empty' );
+					$exact_value = alg_wc_ccf_get_field_option( 'visibility_by_field_exact_value', $i, '' );
+					$field       = alg_wc_ccf_get_field_option( 'section', $i, 'billing' ) . '_' . ALG_WC_CCF_KEY . '_' . $i . '_field';
 					?><script>
-						jQuery( document ).ready( function() {
-							jQuery( '#<?php echo $visibility_by_field; ?>' ).on( 'change input', function() {
-								var value = ( jQuery( this ).is( ':checkbox' ) ? jQuery( this ).is( ':checked' ) : '' != jQuery( this ).val() );
-								jQuery( '#<?php echo alg_wc_ccf_get_field_option( 'section', $i, 'billing' ) . '_' . ALG_WC_CCF_KEY . '_' . $i . '_field'; ?>' ).toggle( value );
+						jQuery( document ).ready( function () {
+							jQuery( '#<?php echo $visibility_by_field; ?>' ).on( 'change input', function () {
+								var action = '<?php echo $action; ?>';
+								var value = ( jQuery( this ).is( ':checkbox' ) ?
+									jQuery( this ).is( ':checked' ) :
+									(
+										(
+											'not_empty' == action &&
+											'' != jQuery( this ).val()
+										) ||
+										(
+											'exact_value' == action &&
+											'<?php echo $exact_value; ?>' == jQuery( this ).val()
+										)
+									)
+								);
+								jQuery( '#<?php echo $field; ?>' ).toggle( value );
 							} );
 							jQuery( '#<?php echo $visibility_by_field; ?>' ).trigger( 'change' );
 						} );
@@ -260,7 +276,7 @@ class Alg_WC_CCF_Frontend {
 	/**
 	 * get_field.
 	 *
-	 * @version 1.7.0
+	 * @version 1.8.3
 	 * @since   1.0.0
 	 *
 	 * @todo    (dev) `default`: `multiselect`: allow comma-separated list?
@@ -379,12 +395,32 @@ class Alg_WC_CCF_Frontend {
 			$field['required'] &&
 			( '' !== ( $visibility_by_field = alg_wc_ccf_get_field_option( 'visibility_by_field', $field_nr, '' ) ) ) &&
 			wp_doing_ajax() && isset( $_REQUEST['wc-ajax'] ) && 'checkout' === wc_clean( $_REQUEST['wc-ajax'] ) &&
-			( ! isset( $_REQUEST[ $visibility_by_field ] ) || '' === $_REQUEST[ $visibility_by_field ] )
+			( ! isset( $_REQUEST[ $visibility_by_field ] ) || ! $this->do_visibility_by_field_match( $field_nr, $_REQUEST[ $visibility_by_field ] ) )
 		) {
 			$field['required'] = false;
 		}
 		// The end
 		return $field;
+	}
+
+	/**
+	 * do_visibility_by_field_match.
+	 *
+	 * @version 1.8.3
+	 * @since   1.8.3
+	 */
+	function do_visibility_by_field_match( $field_nr, $value ) {
+		$action = alg_wc_ccf_get_field_option( 'visibility_by_field_action', $field_nr, 'not_empty' );
+		return (
+			(
+				'not_empty' === $action &&
+				'' !== $value
+			) ||
+			(
+				'exact_value' === $action &&
+				alg_wc_ccf_get_field_option( 'visibility_by_field_exact_value', $field_nr, '' ) === $value
+			)
+		);
 	}
 
 	/**
