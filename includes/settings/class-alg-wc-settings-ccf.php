@@ -2,7 +2,7 @@
 /**
  * Custom Checkout Fields for WooCommerce - Settings
  *
- * @version 1.6.0
+ * @version 1.9.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -17,22 +17,26 @@ class Alg_WC_Settings_CCF extends WC_Settings_Page {
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.6.0
+	 * @version 1.9.0
 	 * @since   1.0.0
 	 */
 	function __construct() {
+
 		$this->id    = ALG_WC_CCF_ID;
 		$this->label = __( 'Custom Checkout Fields', 'custom-checkout-fields-for-woocommerce' );
 		parent::__construct();
+
 		add_filter( 'woocommerce_admin_settings_sanitize_option', array( $this, 'custom_sanitize' ), PHP_INT_MAX, 3 );
+
 		// Sections
-		require_once( 'alg-wc-ccf-options.php' );
-		require_once( 'class-alg-wc-ccf-settings-section.php' );
-		require_once( 'class-alg-wc-ccf-settings-field.php' );
-		require_once( 'class-alg-wc-ccf-settings-general.php' );
+		require_once plugin_dir_path( __FILE__ ) . 'alg-wc-ccf-options.php';
+		require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ccf-settings-section.php';
+		require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ccf-settings-field.php';
+		require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-ccf-settings-general.php';
 		for ( $i = 1; $i <= apply_filters( 'alg_wc_ccf_total_fields', 1 ); $i++ ) {
 			new Alg_WC_CCF_Settings_Field( $i );
 		}
+
 	}
 
 	/**

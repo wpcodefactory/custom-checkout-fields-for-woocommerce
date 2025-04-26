@@ -2,7 +2,7 @@
 /**
  * Custom Checkout Fields for WooCommerce - Frontend Class
  *
- * @version 1.8.3
+ * @version 1.9.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -20,7 +20,7 @@ class Alg_WC_CCF_Frontend {
 	 * @version 1.7.0
 	 * @since   1.0.0
 	 *
-	 * @todo    (dev) PHP validation? e.g. "min/max date" for datepicker?
+	 * @todo    (dev) PHP validation? e.g., "min/max date" for datepicker?
 	 * @todo    (feature) add fields to "My Account"
 	 */
 	function __construct() {
@@ -40,7 +40,7 @@ class Alg_WC_CCF_Frontend {
 	/**
 	 * visibility_by_field.
 	 *
-	 * @version 1.8.3
+	 * @version 1.9.0
 	 * @since   1.6.3
 	 *
 	 * @todo    (dev) recheck `change input`?
@@ -55,8 +55,8 @@ class Alg_WC_CCF_Frontend {
 					$field       = alg_wc_ccf_get_field_option( 'section', $i, 'billing' ) . '_' . ALG_WC_CCF_KEY . '_' . $i . '_field';
 					?><script>
 						jQuery( document ).ready( function () {
-							jQuery( '#<?php echo $visibility_by_field; ?>' ).on( 'change input', function () {
-								var action = '<?php echo $action; ?>';
+							jQuery( '#<?php echo esc_attr( $visibility_by_field ); ?>' ).on( 'change input', function () {
+								var action = '<?php echo esc_attr( $action ); ?>';
 								var value = ( jQuery( this ).is( ':checkbox' ) ?
 									jQuery( this ).is( ':checked' ) :
 									(
@@ -66,13 +66,13 @@ class Alg_WC_CCF_Frontend {
 										) ||
 										(
 											'exact_value' == action &&
-											'<?php echo $exact_value; ?>' == jQuery( this ).val()
+											'<?php echo esc_attr( $exact_value ); ?>' == jQuery( this ).val()
 										)
 									)
 								);
-								jQuery( '#<?php echo $field; ?>' ).toggle( value );
+								jQuery( '#<?php echo esc_attr( $field ); ?>' ).toggle( value );
 							} );
-							jQuery( '#<?php echo $visibility_by_field; ?>' ).trigger( 'change' );
+							jQuery( '#<?php echo esc_attr( $visibility_by_field ); ?>' ).trigger( 'change' );
 						} );
 					</script><?php
 				}
@@ -179,7 +179,7 @@ class Alg_WC_CCF_Frontend {
 	 * @since   1.4.0
 	 *
 	 * @todo    (dev) `duplicate`: country locale
-	 * @todo    (important) maybe rewrite `show` action part, e.g. see `woocommerce_get_country_locale_default` filter
+	 * @todo    (important) maybe rewrite `show` action part, e.g., see `woocommerce_get_country_locale_default` filter
 	 */
 	function get_country_locale( $country_locale ) {
 		for ( $i = 1; $i <= apply_filters( 'alg_wc_ccf_total_fields', 1 ); $i++ ) {
@@ -209,11 +209,11 @@ class Alg_WC_CCF_Frontend {
 	/**
 	 * add_fees.
 	 *
-	 * @version 1.7.2
+	 * @version 1.9.0
 	 * @since   1.2.0
 	 *
-	 * @todo    (dev) check why `get_cart_contents_total()` returns wrong value (e.g. `100` -> `99.99`)
-	 * @todo    (feature) percent fee: optionally add taxes to `$total` (i.e. `get_subtotal_tax()`, `get_cart_contents_tax()`, `get_shipping_tax()`)
+	 * @todo    (dev) check why `get_cart_contents_total()` returns wrong value (e.g., `100` -> `99.99`)
+	 * @todo    (feature) percent fee: optionally add taxes to `$total` (i.e., `get_subtotal_tax()`, `get_cart_contents_tax()`, `get_shipping_tax()`)
 	 * @todo    (feature) customizable `tax_class`
 	 */
 	function add_fees( $cart ) {
@@ -227,16 +227,16 @@ class Alg_WC_CCF_Frontend {
 					foreach ( $this->get_field_data( $i ) as $key => $data ) {
 						$field_id = alg_wc_ccf_get_field_option( 'section', $i, 'billing' ) . '_' . $key;
 						// Post data
-						if ( isset( $post_data ) || isset( $_REQUEST['post_data'] ) ) {
+						if ( isset( $post_data ) || isset( $_REQUEST['post_data'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 							if ( ! isset( $post_data ) ) {
 								$post_data = array();
-								parse_str( $_REQUEST['post_data'], $post_data );
+								parse_str( wc_clean( wp_unslash( $_REQUEST['post_data'] ) ), $post_data ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 							}
 							if ( ! empty( $post_data[ $field_id ] ) ) {
 								$do_add = true;
 								break;
 							}
-						} elseif ( ! empty( $_REQUEST[ $field_id ] ) ) {
+						} elseif ( ! empty( $_REQUEST[ $field_id ] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 							$do_add = true;
 							break;
 						}
@@ -276,7 +276,7 @@ class Alg_WC_CCF_Frontend {
 	/**
 	 * get_field.
 	 *
-	 * @version 1.8.3
+	 * @version 1.9.0
 	 * @since   1.0.0
 	 *
 	 * @todo    (dev) `default`: `multiselect`: allow comma-separated list?
@@ -287,7 +287,7 @@ class Alg_WC_CCF_Frontend {
 	 * @todo    (dev) use `$field['placeholder']` instead of `alg_wc_ccf_get_field_option( 'placeholder', $field_nr, '' )`?
 	 * @todo    (dev) code refactoring: do we really need to check for `array() != $excludedays` etc.
 	 * @todo    (important) sanitize keys for `select` and `radio` (`alg_wc_ccf_get_select_options()`) - `default` also needs to be sanitized then
-	 * @todo    (feature) default values for datepicker, timepicker etc. (e.g. `today`, `today + 3 days` etc.)
+	 * @todo    (feature) default values for datepicker, timepicker etc. (e.g., `today`, `today + 3 days` etc.)
 	 * @todo    (feature) add option for "not pre-populate"
 	 */
 	function get_field( $field_nr, $data = false ) {
@@ -394,8 +394,18 @@ class Alg_WC_CCF_Frontend {
 		if (
 			$field['required'] &&
 			( '' !== ( $visibility_by_field = alg_wc_ccf_get_field_option( 'visibility_by_field', $field_nr, '' ) ) ) &&
-			wp_doing_ajax() && isset( $_REQUEST['wc-ajax'] ) && 'checkout' === wc_clean( $_REQUEST['wc-ajax'] ) &&
-			( ! isset( $_REQUEST[ $visibility_by_field ] ) || ! $this->do_visibility_by_field_match( $field_nr, $_REQUEST[ $visibility_by_field ] ) )
+			(
+				wp_doing_ajax() &&
+				isset( $_REQUEST['wc-ajax'] ) && // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+				'checkout' === sanitize_text_field( wp_unslash( $_REQUEST['wc-ajax'] ) ) // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			) &&
+			(
+				! isset( $_REQUEST[ $visibility_by_field ] ) || // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+				! $this->do_visibility_by_field_match(
+					$field_nr,
+					sanitize_text_field( wp_unslash( $_REQUEST[ $visibility_by_field ] ) ) // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+				)
+			)
 		) {
 			$field['required'] = false;
 		}
@@ -770,11 +780,11 @@ class Alg_WC_CCF_Frontend {
 	/**
 	 * update_custom_checkout_fields_order_meta.
 	 *
-	 * @version 1.8.0
+	 * @version 1.9.0
 	 * @since   1.0.0
 	 *
 	 * @todo    (dev) customizable `$value_meta_key`?
-	 * @todo    (dev) save all options instead, i.e. `$field_data = alg_get_field_data( $i );`
+	 * @todo    (dev) save all options instead, i.e., `$field_data = alg_get_field_data( $i );`
 	 */
 	function update_custom_checkout_fields_order_meta( $order_id ) {
 		$fields_data = array();
@@ -784,8 +794,15 @@ class Alg_WC_CCF_Frontend {
 				$type    = alg_wc_ccf_get_field_option( 'type', $i, 'text' );
 				foreach ( $this->get_field_data( $i ) as $key => $data ) {
 					$option_name = $section . '_' . $key;
-					if ( isset( $_POST[ $option_name ] ) || ( 'checkbox' === $type && $this->is_visible( $i ) ) ) {
-						$value = ( 'checkbox' === $type ? $this->get_checkbox_display_value( isset( $_POST[ $option_name ] ), $i ) : wc_clean( $_POST[ $option_name ] ) );
+					if (
+						isset( $_POST[ $option_name ] ) || // phpcs:ignore WordPress.Security.NonceVerification.Missing
+						( 'checkbox' === $type && $this->is_visible( $i ) )
+					) {
+						$value = (
+							'checkbox' === $type ?
+							$this->get_checkbox_display_value( isset( $_POST[ $option_name ] ), $i ) : // phpcs:ignore WordPress.Security.NonceVerification.Missing
+							wc_clean( wp_unslash( $_POST[ $option_name ] ) ) // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.NonceVerification.Missing
+						);
 						$value_meta_key = '_' . $option_name;
 						if ( ( $order = wc_get_order( $order_id ) ) ) {
 							$order->update_meta_data( $value_meta_key, $value );

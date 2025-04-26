@@ -2,7 +2,7 @@
 /**
  * Custom Checkout Fields for WooCommerce - Options
  *
- * @version 1.8.3
+ * @version 1.9.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -14,25 +14,25 @@ if ( ! function_exists( 'alg_get_wc_ccf_options' ) ) {
 	/**
 	 * alg_get_wc_ccf_options.
 	 *
-	 * @version 1.8.3
+	 * @version 1.9.0
 	 * @since   1.0.0
 	 *
-	 * @todo    (dev) `Select2`: `radio` (move it to a separate subsection, e.g. "Select2 Options")?
-	 * @todo    (dev) `$products`: always use AJAX (i.e. not only on `WC()->version, '5.7.1', '>='`)
+	 * @todo    (dev) `Select2`: `radio` (move it to a separate subsection, e.g., "Select2 Options")?
+	 * @todo    (dev) `$products`: always use AJAX (i.e., not only on `WC()->version, '5.7.1', '>='`)
 	 * @todo    (feature) `type`: non-editable static text?
 	 * @todo    (desc) `$section_message`
 	 * @todo    (dev) `placeholder`: make `text` (now is `textarea`)?
 	 * @todo    (desc) `default_prepopulate`: better title and desc
 	 * @todo    (desc) `customer_meta_fields`: better desc?
 	 * @todo    (dev) add new "Localization" section?
-	 * @todo    (dev) restyle: e.g. select2: from desc to title?
-	 * @todo    (dev) store all in array, e.g. `alg_wc_ccf_1[type]` instead of `alg_wc_ccf_type_1` || move from options to custom post types
+	 * @todo    (dev) restyle: e.g., select2: from desc to title?
+	 * @todo    (dev) store all in array, e.g., `alg_wc_ccf_1[type]` instead of `alg_wc_ccf_type_1` || move from options to custom post types
 	 * @todo    (dev) type: `datalist` (https://www.w3schools.com/tags/tag_datalist.asp)
-	 * @todo    (dev) editable `select` option with jquery (https://stackoverflow.com/questions/5650457/html-select-form-with-option-to-enter-custom-value) (i.e. instead of `is_tagging` in `select2` (https://select2.org/tagging))?
+	 * @todo    (dev) editable `select` option with jquery (https://stackoverflow.com/questions/5650457/html-select-form-with-option-to-enter-custom-value) (i.e., instead of `is_tagging` in `select2` (https://select2.org/tagging))?
 	 * @todo    (feature) Visibility Options: By another field: predefined fields
 	 * @todo    (feature) Visibility Options: By another field: multiple fields
 	 * @todo    (dev) Select2: Custom text: better descriptions
-	 * @todo    (desc) `priority`: better description (i.e. list more current (core) fields priorities)
+	 * @todo    (desc) `priority`: better description (i.e., list more current (core) fields priorities)
 	 * @todo    (dev) `priority`: `'custom_attributes' => array( 'min' => 0 )`?
 	 * @todo    (dev) standard HTML date/time picker(s)
 	 * @todo    (feature) (important) Visibility Options - Categories, Tags, Products - comma separated IDs instead of multiselect
@@ -40,18 +40,31 @@ if ( ! function_exists( 'alg_get_wc_ccf_options' ) ) {
 	 * @todo    (feature) (WC) `validate`
 	 * @todo    (feature) Visibility Options - by payment gateways
 	 * @todo    (feature) Visibility Options - by shipping method
-	 * @todo    (feature) Visibility Options - by users (i.e. not user roles)
+	 * @todo    (feature) Visibility Options - by users (i.e., not user roles)
 	 * @todo    (feature) Visibility Options - ... to *hide*
 	 */
 	function alg_get_wc_ccf_options() {
 
-		$section_message    = ( 'yes' === alg_wc_ccf_get_option( 'hide_unrelated_type_options', 'no' ) ?
+		$section_message    = (
+			'yes' === alg_wc_ccf_get_option( 'hide_unrelated_type_options', 'no' ) ?
+			/* Translators: %s: Field type. */
 			__( 'For %s field type.', 'custom-checkout-fields-for-woocommerce' ) :
-			__( 'Fill this section only if %s type is selected.', 'custom-checkout-fields-for-woocommerce' ) );
-		$price_step         = ( 0 == wc_get_price_decimals() ? 1 : str_pad( '0.', 1 + wc_get_price_decimals(), '0' ) . '1' );
+			/* Translators: %s: Field type. */
+			__( 'Fill this section only if %s type is selected.', 'custom-checkout-fields-for-woocommerce' )
+		);
+		$price_step         = (
+			0 == wc_get_price_decimals() ?
+			1 :
+			str_pad( '0.', 1 + wc_get_price_decimals(), '0' ) . '1'
+		);
 		$product_cats       = alg_wc_ccf_get_product_terms( 'product_cat' );
 		$product_tags       = alg_wc_ccf_get_product_terms( 'product_tag' );
-		$products           = ( ! empty( WC()->version ) && version_compare( WC()->version, '5.7.1', '>=' ) ? false : alg_wc_ccf_get_products() );
+		$products           = (
+			! empty( WC()->version ) &&
+			version_compare( WC()->version, '5.7.1', '>=' ) ?
+			false :
+			alg_wc_ccf_get_products()
+		);
 		$user_roles         = alg_wc_ccf_get_user_roles();
 		$shipping_classes   = alg_wc_ccf_get_shipping_classes();
 
@@ -132,8 +145,14 @@ if ( ! function_exists( 'alg_get_wc_ccf_options' ) ) {
 			),
 			array(
 				'title'    => __( 'Prepopulate default value', 'custom-checkout-fields-for-woocommerce' ),
-				'desc_tip' => __( 'For logged in customers, pull data from their account.', 'custom-checkout-fields-for-woocommerce' ) . ' ' .
-					sprintf( __( 'Ignored for the "%s" type.', 'custom-checkout-fields-for-woocommerce' ), __( 'Multiselect', 'custom-checkout-fields-for-woocommerce' ) ),
+				'desc_tip' => (
+					__( 'For logged in customers, pull data from their account.', 'custom-checkout-fields-for-woocommerce' ) . ' ' .
+					sprintf(
+						/* Translators: %s: Multiselect. */
+						__( 'Ignored for the "%s" type.', 'custom-checkout-fields-for-woocommerce' ),
+						__( 'Multiselect', 'custom-checkout-fields-for-woocommerce' )
+					)
+				),
 				'desc'     => __( 'Enable', 'custom-checkout-fields-for-woocommerce' ),
 				'id'       => 'default_prepopulate',
 				'type'     => 'checkbox',
@@ -155,8 +174,14 @@ if ( ! function_exists( 'alg_get_wc_ccf_options' ) ) {
 			array(
 				'title'    => __( 'User profile', 'custom-checkout-fields-for-woocommerce' ),
 				'desc'     => __( 'Add', 'custom-checkout-fields-for-woocommerce' ),
-				'desc_tip' => __( 'Adds the field to user profile pages.', 'custom-checkout-fields-for-woocommerce' ) . ' ' .
-					sprintf( __( 'Ignored for the "%s" type.', 'custom-checkout-fields-for-woocommerce' ), __( 'Multiselect', 'custom-checkout-fields-for-woocommerce' ) ),
+				'desc_tip' => (
+					__( 'Adds the field to user profile pages.', 'custom-checkout-fields-for-woocommerce' ) . ' ' .
+					sprintf(
+						/* Translators: %s: Multiselect. */
+						__( 'Ignored for the "%s" type.', 'custom-checkout-fields-for-woocommerce' ),
+						__( 'Multiselect', 'custom-checkout-fields-for-woocommerce' )
+					)
+				),
 				'id'       => 'customer_meta_fields',
 				'default'  => 'yes',
 				'type'     => 'checkbox',
@@ -186,7 +211,7 @@ if ( ! function_exists( 'alg_get_wc_ccf_options' ) ) {
 				),
 			),
 			array(
-				'title'    => __( 'Priority (i.e. order)', 'custom-checkout-fields-for-woocommerce' ),
+				'title'    => __( 'Priority (i.e., order)', 'custom-checkout-fields-for-woocommerce' ),
 				'desc_tip' => __( 'Sets field position in the section.', 'custom-checkout-fields-for-woocommerce' ) . ' ' .
 					__( 'For example, "First name" field priority is 10, "Email address" field priority is 110.', 'custom-checkout-fields-for-woocommerce' ),
 				'id'       => 'priority',
@@ -247,7 +272,7 @@ if ( ! function_exists( 'alg_get_wc_ccf_options' ) ) {
 			),
 			array(
 				'desc'     => __( 'Select2: Custom text', 'custom-checkout-fields-for-woocommerce' ),
-				'desc_tip' => __( 'Custom text, e.g. translations.', 'custom-checkout-fields-for-woocommerce' ),
+				'desc_tip' => __( 'Custom text, e.g., translations.', 'custom-checkout-fields-for-woocommerce' ),
 				'id'       => 'type_select_select2_is_i18n',
 				'default'  => 'no',
 				'type'     => 'checkbox',
@@ -302,8 +327,11 @@ if ( ! function_exists( 'alg_get_wc_ccf_options' ) ) {
 			),
 			array(
 				'title'    => __( 'Date format', 'custom-checkout-fields-for-woocommerce' ),
-				'desc'     => sprintf( __( 'Visit <a href="%s" target="_blank">documentation on date and time formatting</a> for valid date formats', 'custom-checkout-fields-for-woocommerce' ),
-					'https://codex.wordpress.org/Formatting_Date_and_Time' ),
+				'desc'     => sprintf(
+					/* Translators: %s: URL. */
+					__( 'Visit <a href="%s" target="_blank">documentation on date and time formatting</a> for valid date formats', 'custom-checkout-fields-for-woocommerce' ),
+					'https://codex.wordpress.org/Formatting_Date_and_Time'
+				),
 				'desc_tip' => __( 'Leave blank to use your current WordPress format', 'custom-checkout-fields-for-woocommerce' ) . ': ' . alg_wc_ccf_get_default_date_format(),
 				'id'       => 'type_datepicker_format',
 				'type'     => 'text',
@@ -396,8 +424,13 @@ if ( ! function_exists( 'alg_get_wc_ccf_options' ) ) {
 			),
 			array(
 				'title'    => __( 'Datepicker', 'custom-checkout-fields-for-woocommerce' ) . ': ' . __( 'Exclude dates', 'custom-checkout-fields-for-woocommerce' ),
-				'desc'     => sprintf( __( 'In %s format, separated by comma. You can use wildcard (%s) in dates. E.g.: %s', 'custom-checkout-fields-for-woocommerce' ),
-						'<code>YYYY-MM-DD</code>', '<code>*</code>', '<code>****-12-25,****-01-01</code>' ),
+				'desc'     => sprintf(
+					/* Translators: %1$s: Date format, %2$s: Asterisk, %3$s: Example. */
+					__( 'In %1$s format, separated by comma. You can use wildcard (%2$s) in dates. E.g.: %3$s', 'custom-checkout-fields-for-woocommerce' ),
+					'<code>YYYY-MM-DD</code>',
+					'<code>*</code>',
+					'<code>****-12-25,****-01-01</code>'
+				),
 				'id'       => 'type_datepicker_excludedates',
 				'type'     => 'text',
 				'default'  => '',
@@ -410,33 +443,53 @@ if ( ! function_exists( 'alg_get_wc_ccf_options' ) ) {
 				'default'  => 'no',
 			),
 			array(
-				'desc'     => __( 'Timepicker addon', 'custom-checkout-fields-for-woocommerce' ) . ': ' . __( 'Time format', 'custom-checkout-fields-for-woocommerce' ) .
-					'<br>' . sprintf( __( 'Visit <a href="%s" target="_blank">timepicker addon options page</a> for valid time formats', 'custom-checkout-fields-for-woocommerce' ),
-						'https://trentrichardson.com/examples/timepicker/#tp-formatting' ),
-				'desc_tip' => sprintf( __( 'Please note that time formatting here differs from the formatting in "%s" option.', 'custom-checkout-fields-for-woocommerce' ),
-					__( 'Timepicker Type Options', 'custom-checkout-fields-for-woocommerce' ) . ' > ' .
-						__( 'Time format', 'custom-checkout-fields-for-woocommerce' ) ),
+				'desc'     => (
+					__( 'Timepicker addon', 'custom-checkout-fields-for-woocommerce' ) . ': ' . __( 'Time format', 'custom-checkout-fields-for-woocommerce' ) .
+					'<br>' . sprintf(
+						/* Translators: %s: URL. */
+						__( 'Visit <a href="%s" target="_blank">timepicker addon options page</a> for valid time formats', 'custom-checkout-fields-for-woocommerce' ),
+						'https://trentrichardson.com/examples/timepicker/#tp-formatting'
+					)
+				),
+				'desc_tip' => sprintf(
+					/* Translators: %s: Option name. */
+					__( 'Please note that time formatting here differs from the formatting in "%s" option.', 'custom-checkout-fields-for-woocommerce' ),
+					(
+						__( 'Timepicker Type Options', 'custom-checkout-fields-for-woocommerce' ) . ' > ' .
+						__( 'Time format', 'custom-checkout-fields-for-woocommerce' )
+					)
+				),
 				'id'       => 'type_datepicker_timepicker_addon_timeformat',
 				'type'     => 'text',
 				'default'  => 'HH:mm',
 			),
 			array(
 				'desc'     => __( 'Timepicker addon', 'custom-checkout-fields-for-woocommerce' ) . ': ' . __( 'Min time', 'custom-checkout-fields-for-woocommerce' ),
-				'desc_tip' => sprintf( __( 'In %s format, e.g.: %s', 'custom-checkout-fields-for-woocommerce' ), 'HH:MM', '15:00' ),
+				'desc_tip' => sprintf(
+					/* Translators: %1$s: Time format, %2$s: Time example. */
+					__( 'In %1$s format, e.g.: %2$s', 'custom-checkout-fields-for-woocommerce' ),
+					'HH:MM',
+					'15:00'
+				),
 				'id'       => 'type_datepicker_timepicker_addon_mintime',
 				'type'     => 'text',
 				'default'  => '',
 			),
 			array(
 				'desc'     => __( 'Timepicker addon', 'custom-checkout-fields-for-woocommerce' ) . ': ' . __( 'Max time', 'custom-checkout-fields-for-woocommerce' ),
-				'desc_tip' => sprintf( __( 'In %s format, e.g.: %s', 'custom-checkout-fields-for-woocommerce' ), 'HH:MM', '18:00' ),
+				'desc_tip' => sprintf(
+					/* Translators: %1$s: Time format, %2$s: Time example. */
+					__( 'In %1$s format, e.g.: %2$s', 'custom-checkout-fields-for-woocommerce' ),
+					'HH:MM',
+					'18:00'
+				),
 				'id'       => 'type_datepicker_timepicker_addon_maxtime',
 				'type'     => 'text',
 				'default'  => '',
 			),
 			array(
 				'desc'     => __( 'Timepicker addon', 'custom-checkout-fields-for-woocommerce' ) . ': ' . __( 'Custom text', 'custom-checkout-fields-for-woocommerce' ),
-				'desc_tip' => __( 'Custom text, e.g. translations.', 'custom-checkout-fields-for-woocommerce' ),
+				'desc_tip' => __( 'Custom text, e.g., translations.', 'custom-checkout-fields-for-woocommerce' ),
 				'id'       => 'type_datepicker_timepicker_addon_is_i18n',
 				'default'  => 'no',
 				'type'     => 'checkbox',
@@ -467,11 +520,20 @@ if ( ! function_exists( 'alg_get_wc_ccf_options' ) ) {
 			),
 			array(
 				'title'    => __( 'Time format', 'custom-checkout-fields-for-woocommerce' ),
-				'desc'     => sprintf( __( 'Visit <a href="%s" target="_blank">timepicker options page</a> for valid time formats', 'custom-checkout-fields-for-woocommerce' ),
-					'http://timepicker.co/options/' ),
-				'desc_tip' => sprintf( __( 'Please note that time formatting here differs from the formatting in "%s" option.', 'custom-checkout-fields-for-woocommerce' ),
-					__( 'Datepicker/Weekpicker Type Options', 'custom-checkout-fields-for-woocommerce' ) . ' > ' .
-						__( 'Timepicker addon', 'custom-checkout-fields-for-woocommerce' ) . ': ' . __( 'Time format', 'custom-checkout-fields-for-woocommerce' ) ),
+				'desc'     => sprintf(
+					/* Translators: %s: URL. */
+					__( 'Visit <a href="%s" target="_blank">timepicker options page</a> for valid time formats', 'custom-checkout-fields-for-woocommerce' ),
+					'http://timepicker.co/options/'
+				),
+				'desc_tip' => sprintf(
+					/* Translators: %s: Option name. */
+					__( 'Please note that time formatting here differs from the formatting in "%s" option.', 'custom-checkout-fields-for-woocommerce' ),
+					(
+						__( 'Datepicker/Weekpicker Type Options', 'custom-checkout-fields-for-woocommerce' ) . ' > ' .
+						__( 'Timepicker addon', 'custom-checkout-fields-for-woocommerce' ) . ': ' .
+						__( 'Time format', 'custom-checkout-fields-for-woocommerce' )
+					)
+				),
 				'id'       => 'type_timepicker_format',
 				'type'     => 'text',
 				'default'  => 'hh:mm p',
@@ -485,14 +547,24 @@ if ( ! function_exists( 'alg_get_wc_ccf_options' ) ) {
 			),
 			array(
 				'title'    => __( 'Min time', 'custom-checkout-fields-for-woocommerce' ),
-				'desc'     => sprintf( __( 'In %s format, e.g.: %s', 'custom-checkout-fields-for-woocommerce' ), '<code>HH:MM</code>', '<code>15:00</code>' ),
+				'desc'     => sprintf(
+					/* Translators: %1$s: Time format, %2$s: Time example. */
+					__( 'In %1$s format, e.g.: %2$s', 'custom-checkout-fields-for-woocommerce' ),
+					'<code>HH:MM</code>',
+					'<code>15:00</code>'
+				),
 				'id'       => 'type_timepicker_mintime',
 				'type'     => 'text',
 				'default'  => '',
 			),
 			array(
 				'title'    => __( 'Max time', 'custom-checkout-fields-for-woocommerce' ),
-				'desc'     => sprintf( __( 'In %s format, e.g.: %s', 'custom-checkout-fields-for-woocommerce' ), '<code>HH:MM</code>', '<code>18:00</code>' ),
+				'desc'     => sprintf(
+					/* Translators: %1$s: Time format, %2$s: Time example. */
+					__( 'In %1$s format, e.g.: %2$s', 'custom-checkout-fields-for-woocommerce' ),
+					'<code>HH:MM</code>',
+					'<code>18:00</code>'
+				),
 				'id'       => 'type_timepicker_maxtime',
 				'type'     => 'text',
 				'default'  => '',
@@ -510,7 +582,7 @@ if ( ! function_exists( 'alg_get_wc_ccf_options' ) ) {
 			),
 			array(
 				'title'    => __( 'Max length', 'custom-checkout-fields-for-woocommerce' ),
-				'desc_tip' => __( 'Maximum number of character for an input field. E.g. for <strong>Text</strong> type.', 'custom-checkout-fields-for-woocommerce' ),
+				'desc_tip' => __( 'Maximum number of character for an input field. E.g., for <strong>Text</strong> type.', 'custom-checkout-fields-for-woocommerce' ),
 				'id'       => 'maxlength',
 				'default'  => 0,
 				'type'     => 'number',
@@ -518,7 +590,7 @@ if ( ! function_exists( 'alg_get_wc_ccf_options' ) ) {
 
 			array(
 				'title'    => __( 'Min value', 'custom-checkout-fields-for-woocommerce' ),
-				'desc_tip' => __( 'Minimum value for an input field. E.g. for <strong>Number/Range</strong> type.', 'custom-checkout-fields-for-woocommerce' ) . ' ' .
+				'desc_tip' => __( 'Minimum value for an input field. E.g., for <strong>Number/Range</strong> type.', 'custom-checkout-fields-for-woocommerce' ) . ' ' .
 					__( 'Leave blank to disable.', 'custom-checkout-fields-for-woocommerce' ),
 				'id'       => 'min',
 				'type'     => 'text',
@@ -526,7 +598,7 @@ if ( ! function_exists( 'alg_get_wc_ccf_options' ) ) {
 			),
 			array(
 				'title'    => __( 'Max value', 'custom-checkout-fields-for-woocommerce' ),
-				'desc_tip' => __( 'Maximum value for an input field. E.g. for <strong>Number/Range</strong> type.', 'custom-checkout-fields-for-woocommerce' ) . ' ' .
+				'desc_tip' => __( 'Maximum value for an input field. E.g., for <strong>Number/Range</strong> type.', 'custom-checkout-fields-for-woocommerce' ) . ' ' .
 					__( 'Leave blank to disable.', 'custom-checkout-fields-for-woocommerce' ),
 				'id'       => 'max',
 				'type'     => 'text',
@@ -534,7 +606,7 @@ if ( ! function_exists( 'alg_get_wc_ccf_options' ) ) {
 			),
 			array(
 				'title'    => __( 'Step', 'custom-checkout-fields-for-woocommerce' ),
-				'desc_tip' => __( 'Legal number intervals for an input field. E.g. for <strong>Number/Range</strong> type.', 'custom-checkout-fields-for-woocommerce' ) . ' ' .
+				'desc_tip' => __( 'Legal number intervals for an input field. E.g., for <strong>Number/Range</strong> type.', 'custom-checkout-fields-for-woocommerce' ) . ' ' .
 					__( 'Leave blank to disable.', 'custom-checkout-fields-for-woocommerce' ),
 				'id'       => 'step',
 				'type'     => 'text',
@@ -625,10 +697,14 @@ if ( ! function_exists( 'alg_get_wc_ccf_options' ) ) {
 				'type'     => 'multiselect',
 				'class'    => ( false === $products ? 'wc-product-search' : 'chosen_select' ),
 				'options'  => ( false === $products ? array() : $products ),
-				'custom_attributes' => ( false === $products ? array(
-						'data-placeholder' => esc_attr__( 'Search for a product&hellip;', 'woocommerce' ),
+				'custom_attributes' => (
+					false === $products ?
+					array(
+						'data-placeholder' => esc_attr__( 'Search for a product&hellip;', 'woocommerce' ), // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
 						'data-action'      => 'woocommerce_json_search_products_and_variations',
-					) : array() ),
+					) :
+					array()
+				),
 			),
 			array(
 				'title'    => __( 'User roles', 'custom-checkout-fields-for-woocommerce' ),
@@ -680,7 +756,7 @@ if ( ! function_exists( 'alg_get_wc_ccf_options' ) ) {
 				'options'  => array(
 					''        => __( 'Always show the field', 'custom-checkout-fields-for-woocommerce' ),
 					'require' => __( 'Show the field only if there are at least one virtual product in the cart', 'custom-checkout-fields-for-woocommerce' ),
-					'exclude' => __( 'Hide the field if there are at least one virtual product in the cart', 'custom-checkout-fields-for-woocommerce' ),
+					'exclude' => __( 'Hide the field if there are at least one virtual product in the cart', 'custom-checkout-fields-for-woocommerce' ), // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude
 				),
 			),
 			array(
@@ -692,7 +768,7 @@ if ( ! function_exists( 'alg_get_wc_ccf_options' ) ) {
 				'options'  => array(
 					''        => __( 'Always show the field', 'custom-checkout-fields-for-woocommerce' ),
 					'require' => __( 'Show the field only if there are at least one downloadable product in the cart', 'custom-checkout-fields-for-woocommerce' ),
-					'exclude' => __( 'Hide the field if there are at least one downloadable product in the cart', 'custom-checkout-fields-for-woocommerce' ),
+					'exclude' => __( 'Hide the field if there are at least one downloadable product in the cart', 'custom-checkout-fields-for-woocommerce' ), // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude
 				),
 			),
 			array(
@@ -718,8 +794,20 @@ if ( ! function_exists( 'alg_get_wc_ccf_options' ) ) {
 			),
 			array(
 				'title'    => __( 'By another field', 'custom-checkout-fields-for-woocommerce' ),
-				'desc'     => sprintf( __( 'E.g.: %s.', 'custom-checkout-fields-for-woocommerce' ),
-					'<code>billing_' . ALG_WC_CCF_KEY . '_' . ( isset( $_GET['section'] ) && 'field_1' === wc_clean( $_GET['section'] ) ? '2' : '1' ) . '</code>' ),
+				'desc'     => sprintf(
+					/* Translators: %s: Field ID example. */
+					__( 'E.g.: %s.', 'custom-checkout-fields-for-woocommerce' ),
+					'<code>' .
+						'billing_' . ALG_WC_CCF_KEY . '_' . (
+							(
+								isset( $_GET['section'] ) && // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+								'field_1' === sanitize_text_field( wp_unslash( $_GET['section'] ) ) // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+							) ?
+							'2' :
+							'1'
+						) .
+					'</code>'
+				),
 				'desc_tip' => __( 'Visibility based on another field value. Enter field ID here.', 'custom-checkout-fields-for-woocommerce' ),
 				'id'       => 'visibility_by_field',
 				'default'  => '',

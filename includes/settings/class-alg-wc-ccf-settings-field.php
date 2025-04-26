@@ -2,7 +2,7 @@
 /**
  * Custom Checkout Fields for WooCommerce - All Products Section Settings - Field
  *
- * @version 1.8.1
+ * @version 1.9.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -38,7 +38,7 @@ class Alg_WC_CCF_Settings_Field extends Alg_WC_CCF_Settings_Section {
 	/**
 	 * admin_script.
 	 *
-	 * @version 1.7.0
+	 * @version 1.9.0
 	 * @since   1.6.3
 	 *
 	 * @todo    (dev) move this to a JS file
@@ -47,7 +47,7 @@ class Alg_WC_CCF_Settings_Field extends Alg_WC_CCF_Settings_Section {
 		?><script>
 		jQuery( document ).ready( function() {
 			// Variables
-			var alg_wc_ccf_field_nr = <?php echo $this->field_nr; ?>;
+			var alg_wc_ccf_field_nr = <?php echo esc_attr( $this->field_nr ); ?>;
 			var alg_wc_ccf_sections = [ 'select', 'checkbox', 'datepicker', 'timepicker' ];
 			// On init
 			alg_wc_ccf_handle_sections( jQuery( '#alg_wc_ccf_type_' + alg_wc_ccf_field_nr ).val() );

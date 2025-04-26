@@ -2,7 +2,7 @@
 /**
  * Custom Checkout Fields for WooCommerce - Order Details Class
  *
- * @version 1.8.1
+ * @version 1.9.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -57,7 +57,7 @@ class Alg_WC_CCF_Order_Details {
 	/**
 	 * add_custom_fields_to_order_display.
 	 *
-	 * @version 1.7.0
+	 * @version 1.9.0
 	 * @since   1.0.0
 	 *
 	 * @todo    (dev) `if ( '' != $field_data['label'] || '' != $field_data['_value'] ) { ... }`?
@@ -81,7 +81,7 @@ class Alg_WC_CCF_Order_Details {
 			}
 		}
 		if ( '' != $html ) {
-			echo $templates['before'] . $html . $templates['after'];
+			echo wp_kses_post( $templates['before'] . $html . $templates['after'] );
 		}
 	}
 
@@ -134,8 +134,14 @@ class Alg_WC_CCF_Order_Details {
 			$key = $field_data['_key'] . '_' . $field_data['_field_nr'] . ( ! empty( $field_data['_key_suffix'] ) ? '_' . $field_data['_key_suffix'] : '' );
 			$fields[ $key ] = array(
 				'type'          => $type,
-				'label'         => strip_tags( $field_data['label'] ) .
-					( ! empty( $field_data['_label_suffix'] ) ? alg_wc_ccf_get_option( 'duplicate_label_glue', ': ' ) . $field_data['_label_suffix'] : '' ),
+				'label'         => (
+					strip_tags( $field_data['label'] ) . // phpcs:ignore WordPress.WP.AlternativeFunctions.strip_tags_strip_tags
+					(
+						! empty( $field_data['_label_suffix'] ) ?
+						alg_wc_ccf_get_option( 'duplicate_label_glue', ': ' ) . $field_data['_label_suffix'] :
+						''
+					)
+				),
 				'show'          => true,
 				'class'         => $class,
 				'wrapper_class' => 'form-field-wide',

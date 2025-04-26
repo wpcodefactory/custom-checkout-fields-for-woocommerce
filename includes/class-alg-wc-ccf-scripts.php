@@ -2,7 +2,7 @@
 /**
  * Custom Checkout Fields for WooCommerce - Scripts Class
  *
- * @version 1.8.1
+ * @version 1.9.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -37,12 +37,20 @@ class Alg_WC_CCF_Scripts {
 	/**
 	 * enqueue_admin_scripts.
 	 *
-	 * @version 1.6.3
+	 * @version 1.9.0
 	 * @since   1.4.0
 	 */
 	function enqueue_admin_scripts() {
-		if ( isset( $_GET['page'], $_GET['tab'], $_GET['section'] ) && 'wc-settings' == $_GET['page'] && ALG_WC_CCF_ID == $_GET['tab'] && 'field_' == substr( $_GET['section'], 0, 6 ) ) {
-			wp_enqueue_script( 'alg-wc-ccf-admin',
+		if (
+			// phpcs:disable WordPress.Security.NonceVerification.Recommended
+			isset( $_GET['page'], $_GET['tab'], $_GET['section'] ) &&
+			'wc-settings' === sanitize_text_field( wp_unslash( $_GET['page'] ) ) &&
+			ALG_WC_CCF_ID === sanitize_text_field( wp_unslash( $_GET['tab'] ) ) &&
+			'field_' === substr( sanitize_text_field( wp_unslash( $_GET['section'] ) ), 0, 6 )
+			// phpcs:enable WordPress.Security.NonceVerification.Recommended
+		) {
+			wp_enqueue_script(
+				'alg-wc-ccf-admin',
 				alg_wc_custom_checkout_fields()->plugin_url() . '/includes/js/alg-wc-ccf-admin' . $this->min_suffix . '.js',
 				array( 'jquery' ),
 				ALG_WC_CCF_VERSION,
@@ -129,7 +137,7 @@ class Alg_WC_CCF_Scripts {
 			wp_enqueue_script( 'jquery-ui-datepicker' );
 			// Style
 			wp_enqueue_style( 'jquery-ui-style',
-				'//ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/base/jquery-ui.css',
+				'//ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/base/jquery-ui.css', // phpcs:ignore PluginCheck.CodeAnalysis.EnqueuedResourceOffloading.OffloadedContent
 				array(),
 				ALG_WC_CCF_VERSION
 			);
@@ -144,13 +152,13 @@ class Alg_WC_CCF_Scripts {
 				// Datepicker - Timepicker addon
 				if ( $do_load['datepicker_timepicker_addon'] ) {
 					wp_enqueue_script( 'alg-wc-ccf-datepicker-timepicker-addon',
-						'//cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.js',
+						'//cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.js', // phpcs:ignore PluginCheck.CodeAnalysis.EnqueuedResourceOffloading.OffloadedContent
 						array( 'jquery' ),
 						ALG_WC_CCF_VERSION,
 						true
 					);
 					wp_enqueue_style( 'alg-wc-ccf-datepicker-timepicker-addon',
-						'//cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.css',
+						'//cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.css', // phpcs:ignore PluginCheck.CodeAnalysis.EnqueuedResourceOffloading.OffloadedContent
 						array(),
 						ALG_WC_CCF_VERSION
 					);

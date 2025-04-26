@@ -2,7 +2,7 @@
 /**
  * Custom Checkout Fields for WooCommerce - General Section Settings
  *
- * @version 1.6.3
+ * @version 1.9.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -33,21 +33,25 @@ class Alg_WC_CCF_Settings_General extends Alg_WC_CCF_Settings_Section {
 	 * @since   1.0.0
 	 */
 	function placeholders_desc( $values ) {
-		return sprintf( __( 'Placeholders: %s', 'custom-checkout-fields-for-woocommerce' ), '<code>' . implode( '</code>, <code>', $values ) . '</code>' );
+		return sprintf(
+			/* Translators: %s: Placeholder list. */
+			__( 'Placeholders: %s', 'custom-checkout-fields-for-woocommerce' ),
+			'<code>' . implode( '</code>, <code>', $values ) . '</code>'
+		);
 	}
 
 	/**
 	 * get_settings.
 	 *
-	 * @version 1.6.3
+	 * @version 1.9.0
 	 * @since   1.0.0
 	 *
-	 * @todo    (desc) move everything except `enabled` and `total_number` to a separate settings section, e.g. "Advanced"?
+	 * @todo    (desc) move everything except `enabled` and `total_number` to a separate settings section, e.g., "Advanced"?
 	 * @todo    (desc) `key`
 	 * @todo    (dev) `hide_unrelated_type_options`: default to `yes`
 	 * @todo    (desc) Label template for duplicated fields: better descriptions
 	 * @todo    (desc) `total_number`: better title?
-	 * @todo    (feature) add optional different fields settings view (i.e. by option types, instead of by fields)
+	 * @todo    (feature) add optional different fields settings view (i.e., by option types, instead of by fields)
 	 */
 	function get_settings() {
 		$settings = array(
@@ -65,10 +69,24 @@ class Alg_WC_CCF_Settings_General extends Alg_WC_CCF_Settings_Section {
 			),
 			array(
 				'title'    => __( 'Custom fields number', 'custom-checkout-fields-for-woocommerce' ),
-				'desc'     => sprintf( __( 'Click "%s" after you set this number - new settings sections will be displayed for each field.', 'custom-checkout-fields-for-woocommerce' ),
-						'<strong>' . __( 'Save changes', 'custom-checkout-fields-for-woocommerce' ) . '</strong>' ) .
-					apply_filters( 'alg_wc_ccf_settings', '<br>' . sprintf( 'You will need %s plugin to add more than one custom field.',
-						'<a target="_blank" href="https://wpfactory.com/item/custom-checkout-fields-for-woocommerce/">' . 'Custom Checkout Fields for WooCommerce Pro' . '</a>' ) ),
+				'desc'     => (
+					sprintf(
+						/* Translators: %s: Button title. */
+						__( 'Click "%s" after you set this number - new settings sections will be displayed for each field.', 'custom-checkout-fields-for-woocommerce' ),
+						'<strong>' .
+							__( 'Save changes', 'custom-checkout-fields-for-woocommerce' ) .
+						'</strong>'
+					) .
+					apply_filters(
+						'alg_wc_ccf_settings',
+						'<br>' . sprintf(
+							'You will need %s plugin to add more than one custom field.',
+							'<a target="_blank" href="https://wpfactory.com/item/custom-checkout-fields-for-woocommerce/">' .
+								'Custom Checkout Fields for WooCommerce Pro' .
+							'</a>'
+						)
+					)
+				),
 				'id'       => 'total_number',
 				'default'  => 1,
 				'type'     => 'number',
@@ -116,7 +134,7 @@ class Alg_WC_CCF_Settings_General extends Alg_WC_CCF_Settings_Section {
 				'type'     => 'textarea',
 			),
 			array(
-				'title'    => __( 'Add all fields to "Order Received" (i.e. "Thank You") and "View Order" pages', 'custom-checkout-fields-for-woocommerce' ),
+				'title'    => __( 'Add all fields to "Order Received" (i.e., "Thank You") and "View Order" pages', 'custom-checkout-fields-for-woocommerce' ),
 				'desc'     => __( 'Add', 'custom-checkout-fields-for-woocommerce' ),
 				'id'       => 'add_to_order_received',
 				'default'  => 'yes',
@@ -152,7 +170,7 @@ class Alg_WC_CCF_Settings_General extends Alg_WC_CCF_Settings_Section {
 			array(
 				'title'    => __( 'Force fields sort by priority', 'custom-checkout-fields-for-woocommerce' ),
 				'desc'     => __( 'Enable', 'custom-checkout-fields-for-woocommerce' ),
-				'desc_tip' => __( 'Enable this if you are having theme related issues with "Priority (i.e. order)" options.', 'custom-checkout-fields-for-woocommerce' ),
+				'desc_tip' => __( 'Enable this if you are having theme related issues with "Priority (i.e., order)" options.', 'custom-checkout-fields-for-woocommerce' ),
 				'type'     => 'checkbox',
 				'id'       => 'force_sort_by_priority',
 				'default'  => 'no',
@@ -186,8 +204,11 @@ class Alg_WC_CCF_Settings_General extends Alg_WC_CCF_Settings_Section {
 			),
 			array(
 				'title'    => __( 'Fields ID', 'custom-checkout-fields-for-woocommerce' ),
-				'desc'     => sprintf( __( 'Will be used in all fields as the middle part of ID, wrapped in field section and number, e.g. %s.', 'custom-checkout-fields-for-woocommerce' ),
-					'<code>_billing_<span style="color:black;">' . ALG_WC_CCF_KEY . '</span>_1</code>' ),
+				'desc'     => sprintf(
+					/* Translators: %s: Field ID example. */
+					__( 'Will be used in all fields as the middle part of ID, wrapped in field section and number, e.g., %s.', 'custom-checkout-fields-for-woocommerce' ),
+					'<code>_billing_<span style="color:black;">' . ALG_WC_CCF_KEY . '</span>_1</code>'
+				),
 				'type'     => 'text',
 				'id'       => 'key',
 				'default'  => 'alg_wc_checkout_field',

@@ -29,7 +29,7 @@ if ( ! function_exists( 'alg_wc_ccf_get_field_option' ) ) {
 	 * @version 1.6.1
 	 * @since   1.0.0
 	 *
-	 * @todo    (dev) add more fields to `do_shortcode()`, e.g. `type_select_options`, `type_select_select2_i18n_no_matches` etc.?
+	 * @todo    (dev) add more fields to `do_shortcode()`, e.g., `type_select_options`, `type_select_select2_i18n_no_matches` etc.?
 	 */
 	function alg_wc_ccf_get_field_option( $option, $field_nr, $default = false, $context = '' ) {
 		$result = alg_wc_ccf_get_option( $option . '_' . $field_nr, $default );
@@ -108,18 +108,20 @@ if ( ! function_exists( 'alg_wc_ccf_get_product_terms' ) ) {
 	/**
 	 * alg_wc_ccf_get_product_terms.
 	 *
-	 * @version 1.0.0
+	 * @version 1.9.0
 	 * @since   1.0.0
 	 */
 	function alg_wc_ccf_get_product_terms( $taxonomy = 'product_cat' ) {
-		$product_terms  = array();
-		$_product_terms = get_terms( $taxonomy, 'orderby=name&hide_empty=0' );
-		if ( ! empty( $_product_terms ) && ! is_wp_error( $_product_terms ) ){
-			foreach ( $_product_terms as $_product_term ) {
-				$product_terms[ $_product_term->term_id ] = $_product_term->name;
-			}
-		}
-		return $product_terms;
+		$product_terms = get_terms( array(
+			'taxonomy'   => $taxonomy,
+			'orderby'    => 'name',
+			'hide_empty' => 0,
+		) );
+		return (
+			! empty( $product_terms ) && ! is_wp_error( $product_terms ) ?
+			wp_list_pluck( $product_terms, 'name', 'term_id' ) :
+			array()
+		);
 	}
 }
 
@@ -170,7 +172,7 @@ if ( ! function_exists( 'alg_wc_ccf_get_shipping_classes' ) ) {
 		if ( class_exists( 'WC_Shipping' ) ) {
 			$wc_shipping              = WC_Shipping::instance();
 			$shipping_classes_terms   = $wc_shipping->get_shipping_classes();
-			$shipping_classes         = array( -1 => __( 'No shipping class', 'woocommerce' ) );
+			$shipping_classes         = array( -1 => __( 'No shipping class', 'woocommerce' ) ); // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
 			foreach ( $shipping_classes_terms as $shipping_classes_term ) {
 				$shipping_classes[ $shipping_classes_term->term_id ] = $shipping_classes_term->name;
 			}

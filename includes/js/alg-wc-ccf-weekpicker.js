@@ -16,7 +16,7 @@ jQuery( document ).ready( function() {
 	 *
 	 * @todo    (test) `minDate` and `maxDate` (check "Datepicker")
 	 * @todo    (dev) localization
-	 * @todo    (dev) more options from "Datepicker", i.e. "Exclude days", "Exclude months", "Exclude dates", (maybe) "Timepicker addon"
+	 * @todo    (dev) more options from "Datepicker", i.e., "Exclude days", "Exclude months", "Exclude dates", (maybe) "Timepicker addon"
 	 */
 	jQuery( "input[display='week']" ).each( function() {
 		jQuery( this ).datepicker( {

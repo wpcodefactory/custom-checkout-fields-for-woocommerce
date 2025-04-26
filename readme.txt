@@ -2,8 +2,8 @@
 Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas, kousikmukherjeeli
 Tags: woocommerce, checkout, woo commerce
 Requires at least: 4.4
-Tested up to: 6.6
-Stable tag: 1.8.3
+Tested up to: 6.8
+Stable tag: 1.9.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -47,7 +47,7 @@ Add custom fields to WooCommerce checkout page.
 = &#9989; Position Options =
 
 * Section (billing/shipping/account/order)
-* Priority (i.e. order)
+* Priority (i.e., order)
 
 = &#9989; Input Options =
 
@@ -105,13 +105,24 @@ Add custom fields to WooCommerce checkout page.
 
 == Changelog ==
 
+= 1.9.0 - 26/04/2025 =
+* Dev - Security - Sanitize input.
+* Dev - Security - Escape output.
+* Dev - Plugin settings moved to the "WPFactory" menu.
+* Dev - "Recommendations" added.
+* Dev - "Key Manager" added.
+* Dev - Admin settings descriptions updated.
+* Dev - Coding standards improved.
+* WC tested up to: 9.8.
+* Tested up to: 6.8.
+
 = 1.8.3 - 02/08/2024 =
 * Dev - Visibility Options - By another field - "Action" options added ("Check if not empty" and "Check for an exact value").
-* WooCommerce added to the "Requires Plugins" (plugin header).
 
 = 1.8.2 - 30/07/2024 =
 * WC tested up to: 9.1.
 * Tested up to: 6.6.
+* WooCommerce added to the "Requires Plugins" (plugin header).
 
 = 1.8.1 - 24/11/2023 =
 * Dev - PHP 8.2 compatibility - "Creation of dynamic property is deprecated" notice fixed.
@@ -163,7 +174,7 @@ Add custom fields to WooCommerce checkout page.
 * Fix - "Account" and "Order notes" section fields were duplicated to other sections as well. This is fixed now.
 
 = 1.6.3 - 02/09/2021 =
-* Fix - Visibility Options - Checking for `is_visible()` in `default_address_fields()`. This fixes the issue with visibility options (e.g. "User roles") not functioning properly.
+* Fix - Visibility Options - Checking for `is_visible()` in `default_address_fields()`. This fixes the issue with visibility options (e.g., "User roles") not functioning properly.
 * Dev - Visibility Options - "By another field" option added.
 * Dev - General - "Hide unrelated type options" option added (defaults to `no`).
 * Dev - General - "Fields ID" option added (defaults to `alg_wc_checkout_field`).
@@ -184,7 +195,7 @@ Add custom fields to WooCommerce checkout page.
 * Fix - Fees - JS script fixed.
 * Dev - "Duplicate" option added.
 * Dev - Admin order details - Stripping tags from field labels now.
-* Dev - Position Options - Priority (i.e. order) - Default value updated to `200` (was `0`). Admin settings description updated.
+* Dev - Position Options - Priority (i.e., order) - Default value updated to `200` (was `0`). Admin settings description updated.
 * Dev - Developers - `alg_wc_ccf_field_visible` filter added.
 * Dev - Plugin is initialized on `plugins_loaded` action now.
 * Dev - Code refactoring.
@@ -202,7 +213,7 @@ Add custom fields to WooCommerce checkout page.
 * Dev - Localization - `load_plugin_textdomain` moved to the to `init` action.
 
 = 1.4.9 - 16/12/2020 =
-* Dev - Frontend - Order meta - Checking if field `is_visible()` before adding it to order meta. This solves the issue with hidden (e.g. via "Visibility Options > Products") "checkbox" type fields.
+* Dev - Frontend - Order meta - Checking if field `is_visible()` before adding it to order meta. This solves the issue with hidden (e.g., via "Visibility Options > Products") "checkbox" type fields.
 * Tested up to: 5.6.
 * WC tested up to: 4.8.
 
