@@ -1,9 +1,9 @@
 === Custom Checkout Fields for WooCommerce ===
-Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas, kousikmukherjeeli
+Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas
 Tags: woocommerce, checkout, woo commerce
 Requires at least: 4.4
 Tested up to: 6.8
-Stable tag: 1.9.0
+Stable tag: 1.9.1
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -97,13 +97,16 @@ Add custom fields to WooCommerce checkout page.
 
 1. Upload the entire plugin folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the "Plugins" menu in WordPress.
-3. Start by visiting plugin settings at "WooCommerce > Settings > Custom Checkout Fields".
+3. Start by visiting plugin settings at "WPFactory > Custom Checkout Fields".
 
 == Screenshots ==
 
 1. Field options.
 
 == Changelog ==
+
+= 1.9.1 - 28/04/2025 =
+* Description (readme.txt) updated.
 
 = 1.9.0 - 26/04/2025 =
 * Dev - Security - Sanitize input.
