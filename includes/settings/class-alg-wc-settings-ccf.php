@@ -46,7 +46,15 @@ class Alg_WC_Settings_CCF extends WC_Settings_Page {
 	 * @since   1.6.0
 	 */
 	function custom_sanitize( $value, $option, $raw_value ) {
-		return ( ! empty( $option['alg_wc_ccf_sanitize'] ) && ( $func = $option['alg_wc_ccf_sanitize'] ) && function_exists( $func ) ? $func( $raw_value ) : $value );
+		return (
+			(
+				! empty( $option['alg_wc_ccf_sanitize'] ) &&
+				( $func = $option['alg_wc_ccf_sanitize'] ) &&
+				function_exists( $func )
+			) ?
+			$func( $raw_value ) :
+			$value
+		);
 	}
 
 	/**
@@ -57,25 +65,30 @@ class Alg_WC_Settings_CCF extends WC_Settings_Page {
 	 */
 	function get_settings() {
 		global $current_section;
-		return $this->add_wc_ccf_id( array_merge( apply_filters( 'woocommerce_get_settings_' . $this->id . '_' . $current_section, array() ), array(
-			array(
-				'title'     => __( 'Reset Settings', 'custom-checkout-fields-for-woocommerce' ),
-				'type'      => 'title',
-				'id'        => $current_section . '_' . 'reset_options',
-			),
-			array(
-				'title'     => __( 'Reset section settings', 'custom-checkout-fields-for-woocommerce' ),
-				'desc'      => '<strong>' . __( 'Reset', 'custom-checkout-fields-for-woocommerce' ) . '</strong>',
-				'desc_tip'  => __( 'Check the box and save changes to reset.', 'custom-checkout-fields-for-woocommerce' ),
-				'id'        => $current_section . '_' . 'reset',
-				'default'   => 'no',
-				'type'      => 'checkbox',
-			),
-			array(
-				'type'      => 'sectionend',
-				'id'        => $current_section . '_' . 'reset_options',
-			),
-		) ) );
+		return $this->add_wc_ccf_id(
+			array_merge(
+				apply_filters( 'woocommerce_get_settings_' . $this->id . '_' . $current_section, array() ),
+				array(
+					array(
+						'title'     => __( 'Reset Settings', 'custom-checkout-fields-for-woocommerce' ),
+						'type'      => 'title',
+						'id'        => $current_section . '_' . 'reset_options',
+					),
+					array(
+						'title'     => __( 'Reset section settings', 'custom-checkout-fields-for-woocommerce' ),
+						'desc'      => '<strong>' . __( 'Reset', 'custom-checkout-fields-for-woocommerce' ) . '</strong>',
+						'desc_tip'  => __( 'Check the box and save changes to reset.', 'custom-checkout-fields-for-woocommerce' ),
+						'id'        => $current_section . '_' . 'reset',
+						'default'   => 'no',
+						'type'      => 'checkbox',
+					),
+					array(
+						'type'      => 'sectionend',
+						'id'        => $current_section . '_' . 'reset_options',
+					),
+				)
+			)
+		);
 	}
 
 	/**

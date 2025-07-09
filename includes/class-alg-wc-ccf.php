@@ -2,7 +2,7 @@
 /**
  * Custom Checkout Fields for WooCommerce - Main Class
  *
- * @version 1.9.0
+ * @version 1.9.2
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -107,7 +107,7 @@ final class Alg_WC_CCF {
 	 * @version 1.8.0
 	 * @since   1.8.0
 	 *
-	 * @see     https://github.com/woocommerce/woocommerce/wiki/High-Performance-Order-Storage-Upgrade-Recipe-Book#declaring-extension-incompatibility
+	 * @see     https://developer.woocommerce.com/docs/features/high-performance-order-storage/recipe-book/
 	 */
 	function wc_declare_compatibility() {
 		if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
@@ -155,7 +155,10 @@ final class Alg_WC_CCF {
 	function admin() {
 
 		// Action links
-		add_filter( 'plugin_action_links_' . plugin_basename( ALG_WC_CCF_FILE ), array( $this, 'action_links' ) );
+		add_filter(
+			'plugin_action_links_' . plugin_basename( ALG_WC_CCF_FILE ),
+			array( $this, 'action_links' )
+		);
 
 		// "Recommendations" page
 		add_action( 'init', array( $this, 'add_cross_selling_library' ) );
@@ -219,7 +222,7 @@ final class Alg_WC_CCF {
 	/**
 	 * move_wc_settings_tab_to_wpfactory_menu.
 	 *
-	 * @version 1.9.0
+	 * @version 1.9.2
 	 * @since   1.9.0
 	 */
 	function move_wc_settings_tab_to_wpfactory_menu() {
@@ -237,7 +240,11 @@ final class Alg_WC_CCF {
 		$wpfactory_admin_menu->move_wc_settings_tab_to_wpfactory_menu( array(
 			'wc_settings_tab_id' => ALG_WC_CCF_ID,
 			'menu_title'         => __( 'Custom Checkout Fields', 'custom-checkout-fields-for-woocommerce' ),
-			'page_title'         => __( 'Custom Checkout Fields', 'custom-checkout-fields-for-woocommerce' ),
+			'page_title'         => __( 'WooCommerce Additional Checkout Fields Customizer', 'custom-checkout-fields-for-woocommerce' ),
+			'plugin_icon'        => array(
+				'get_url_method'    => 'wporg_plugins_api',
+				'wporg_plugin_slug' => 'custom-checkout-fields-for-woocommerce',
+			),
 		) );
 
 	}
