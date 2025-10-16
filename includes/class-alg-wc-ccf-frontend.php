@@ -2,7 +2,7 @@
 /**
  * Custom Checkout Fields for WooCommerce - Frontend Class
  *
- * @version 1.9.0
+ * @version 1.9.4
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -276,7 +276,7 @@ class Alg_WC_CCF_Frontend {
 	/**
 	 * get_field.
 	 *
-	 * @version 1.9.0
+	 * @version 1.9.4
 	 * @since   1.0.0
 	 *
 	 * @todo    (dev) `default`: `multiselect`: allow comma-separated list?
@@ -291,10 +291,14 @@ class Alg_WC_CCF_Frontend {
 	 * @todo    (feature) add option for "not pre-populate"
 	 */
 	function get_field( $field_nr, $data = false ) {
+
 		$type = alg_wc_ccf_get_field_option( 'type', $field_nr, 'text' );
+
 		$custom_attributes = array();
+
 		// Custom attributes: 'datepicker', 'weekpicker', 'timepicker', 'number', 'color', 'search', 'url', 'range'
 		if ( in_array( $type, array( 'datepicker', 'weekpicker', 'timepicker', 'number', 'color', 'search', 'url', 'range' ) ) ) {
+
 			if ( 'datepicker' === $type || 'weekpicker' === $type ) {
 				// Datepicker/weekpicker
 				$custom_attributes['display']           = ( 'datepicker' === $type ) ? 'date' : 'week';
@@ -342,13 +346,18 @@ class Alg_WC_CCF_Frontend {
 				// Other
 				$custom_attributes['display']           = $type;
 			}
+
 			// Change `type` to `text`
 			$type = 'text';
+
 		} elseif ( 'multiselect' === $type ) {
+
 			// Multiselect
 			$custom_attributes['multiple'] = 'multiple';
 			$type = 'select';
+
 		}
+
 		// Custom attributes: `min`, `max`, `step`
 		if ( '' !== ( $min = alg_wc_ccf_get_field_option( 'min', $field_nr, '' ) ) ) {
 			$custom_attributes['min'] = $min;
@@ -359,13 +368,26 @@ class Alg_WC_CCF_Frontend {
 		if ( '' !== ( $step = alg_wc_ccf_get_field_option( 'step', $field_nr, '' ) ) ) {
 			$custom_attributes['step'] = $step;
 		}
+
 		// Is fee
 		$is_fee = ( 0 != alg_wc_ccf_get_field_option( 'fee_value', $field_nr, 0 ) );
+
 		// The field
 		$field = array(
 			'type'              => $type,
-			'label'             => alg_wc_ccf_get_field_option( 'label', $field_nr, '' ) .
-				( ! empty( $data['label_suffix'] ) ? alg_wc_ccf_get_option( 'duplicate_label_glue', ': ' ) . $data['label_suffix'] : '' ),
+			'label'             => apply_filters(
+				'alg_wc_ccf_field_label',
+				(
+					alg_wc_ccf_get_field_option( 'label', $field_nr, '' ) .
+					(
+						! empty( $data['label_suffix'] ) ?
+						alg_wc_ccf_get_option( 'duplicate_label_glue', ': ' ) . $data['label_suffix'] :
+						''
+					)
+				),
+				$data,
+				$field_nr
+			),
 			'placeholder'       => alg_wc_ccf_get_field_option( 'placeholder', $field_nr, '' ),
 			'required'          => ( 'yes' === alg_wc_ccf_get_field_option( 'required', $field_nr, 'no' ) ),
 			'custom_attributes' => $custom_attributes,
@@ -379,6 +401,7 @@ class Alg_WC_CCF_Frontend {
 			'autofocus'         => ( 'yes' === alg_wc_ccf_get_field_option( 'autofocus', $field_nr, 'no' ) ),
 			'autocomplete'      => alg_wc_ccf_get_field_option( 'autocomplete', $field_nr, 'no' ),
 		);
+
 		// Select/multiselect/radio `options`
 		if ( 'select' === $type || 'radio' === $type ) {
 			$type_select_options = alg_wc_ccf_get_select_options( alg_wc_ccf_get_field_option( 'type_select_options', $field_nr, '' ) );
@@ -390,6 +413,7 @@ class Alg_WC_CCF_Frontend {
 			}
 			$field['options'] = $type_select_options;
 		}
+
 		// Maybe change `required` by `visibility_by_field`
 		if (
 			$field['required'] &&
@@ -409,8 +433,10 @@ class Alg_WC_CCF_Frontend {
 		) {
 			$field['required'] = false;
 		}
+
 		// The end
 		return $field;
+
 	}
 
 	/**

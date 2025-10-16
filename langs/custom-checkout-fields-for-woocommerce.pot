@@ -2,40 +2,40 @@
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: custom-checkout-fields-for-woocommerce 1.9.3\n"
+"Project-Id-Version: Custom Checkout Fields for WooCommerce 1.9.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/custom-checkout-fields-for-woocommerce\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-11T16:21:24+00:00\n"
+"POT-Creation-Date: 2025-10-16T13:18:46+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.12.0\n"
+"X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: custom-checkout-fields-for-woocommerce\n"
 
 #. Plugin Name of the plugin
-#: custom-checkout-fields-for-woocommerce-pro.php
-msgid "Custom Checkout Fields for WooCommerce Pro"
+#: custom-checkout-fields-for-woocommerce.php
+msgid "Custom Checkout Fields for WooCommerce"
 msgstr ""
 
 #. Plugin URI of the plugin
-#: custom-checkout-fields-for-woocommerce-pro.php
+#: custom-checkout-fields-for-woocommerce.php
 msgid "https://wpfactory.com/item/custom-checkout-fields-for-woocommerce/"
 msgstr ""
 
 #. Description of the plugin
-#: custom-checkout-fields-for-woocommerce-pro.php
+#: custom-checkout-fields-for-woocommerce.php
 msgid "Add custom fields to WooCommerce checkout page."
 msgstr ""
 
 #. Author of the plugin
-#: custom-checkout-fields-for-woocommerce-pro.php
+#: custom-checkout-fields-for-woocommerce.php
 msgid "WPFactory"
 msgstr ""
 
 #. Author URI of the plugin
-#: custom-checkout-fields-for-woocommerce-pro.php
+#: custom-checkout-fields-for-woocommerce.php
 msgid "https://wpfactory.com"
 msgstr ""
 
@@ -98,13 +98,13 @@ msgstr ""
 msgid "Minute"
 msgstr ""
 
-#: includes/class-alg-wc-ccf-frontend.php:775
+#: includes/class-alg-wc-ccf-frontend.php:801
 #: includes/settings/alg-wc-ccf-options.php:308
 #: includes/settings/alg-wc-ccf-options.php:889
 msgid "Yes"
 msgstr ""
 
-#: includes/class-alg-wc-ccf-frontend.php:776
+#: includes/class-alg-wc-ccf-frontend.php:802
 #: includes/settings/alg-wc-ccf-options.php:314
 msgid "No"
 msgstr ""
@@ -118,7 +118,7 @@ msgid "Go Pro"
 msgstr ""
 
 #: includes/class-alg-wc-ccf.php:242
-#: includes/settings/class-alg-wc-ccf-settings-general.php:64
+#: includes/settings/class-alg-wc-ccf-settings-general.php:65
 #: includes/settings/class-alg-wc-settings-ccf.php:26
 msgid "Custom Checkout Fields"
 msgstr ""
@@ -129,13 +129,11 @@ msgstr ""
 
 #. Translators: %s: Field type.
 #: includes/settings/alg-wc-ccf-options.php:51
-#, php-format
 msgid "For %s field type."
 msgstr ""
 
 #. Translators: %s: Field type.
 #: includes/settings/alg-wc-ccf-options.php:53
-#, php-format
 msgid "Fill this section only if %s type is selected."
 msgstr ""
 
@@ -156,8 +154,8 @@ msgstr ""
 #: includes/settings/alg-wc-ccf-options.php:156
 #: includes/settings/alg-wc-ccf-options.php:440
 #: includes/settings/alg-wc-ccf-options.php:617
-#: includes/settings/class-alg-wc-ccf-settings-general.php:172
-#: includes/settings/class-alg-wc-ccf-settings-general.php:200
+#: includes/settings/class-alg-wc-ccf-settings-general.php:185
+#: includes/settings/class-alg-wc-ccf-settings-general.php:213
 msgid "Enable"
 msgstr ""
 
@@ -256,12 +254,12 @@ msgid "Do not duplicate"
 msgstr ""
 
 #: includes/settings/alg-wc-ccf-options.php:123
-#: includes/settings/class-alg-wc-ccf-settings-general.php:180
+#: includes/settings/class-alg-wc-ccf-settings-general.php:193
 msgid "For each product in cart"
 msgstr ""
 
 #: includes/settings/alg-wc-ccf-options.php:124
-#: includes/settings/class-alg-wc-ccf-settings-general.php:186
+#: includes/settings/class-alg-wc-ccf-settings-general.php:199
 msgid "For each product item in cart"
 msgstr ""
 
@@ -292,7 +290,6 @@ msgstr ""
 #. Translators: %s: Multiselect.
 #: includes/settings/alg-wc-ccf-options.php:152
 #: includes/settings/alg-wc-ccf-options.php:181
-#, php-format
 msgid "Ignored for the \"%s\" type."
 msgstr ""
 
@@ -311,9 +308,9 @@ msgstr ""
 
 #: includes/settings/alg-wc-ccf-options.php:176
 #: includes/settings/alg-wc-ccf-options.php:360
-#: includes/settings/class-alg-wc-ccf-settings-general.php:106
-#: includes/settings/class-alg-wc-ccf-settings-general.php:113
-#: includes/settings/class-alg-wc-ccf-settings-general.php:138
+#: includes/settings/class-alg-wc-ccf-settings-general.php:112
+#: includes/settings/class-alg-wc-ccf-settings-general.php:119
+#: includes/settings/class-alg-wc-ccf-settings-general.php:147
 msgid "Add"
 msgstr ""
 
@@ -451,7 +448,6 @@ msgstr ""
 
 #. Translators: %s: URL.
 #: includes/settings/alg-wc-ccf-options.php:332
-#, php-format
 msgid "Visit <a href=\"%s\" target=\"_blank\">documentation on date and time formatting</a> for valid date formats"
 msgstr ""
 
@@ -595,7 +591,6 @@ msgstr ""
 
 #. Translators: %1$s: Date format, %2$s: Asterisk, %3$s: Example.
 #: includes/settings/alg-wc-ccf-options.php:429
-#, php-format
 msgid "In %1$s format, separated by comma. You can use wildcard (%2$s) in dates. E.g.: %3$s"
 msgstr ""
 
@@ -617,14 +612,12 @@ msgstr ""
 
 #. Translators: %s: URL.
 #: includes/settings/alg-wc-ccf-options.php:450
-#, php-format
 msgid "Visit <a href=\"%s\" target=\"_blank\">timepicker addon options page</a> for valid time formats"
 msgstr ""
 
 #. Translators: %s: Option name.
 #: includes/settings/alg-wc-ccf-options.php:456
 #: includes/settings/alg-wc-ccf-options.php:530
-#, php-format
 msgid "Please note that time formatting here differs from the formatting in \"%s\" option."
 msgstr ""
 
@@ -643,7 +636,6 @@ msgstr ""
 #: includes/settings/alg-wc-ccf-options.php:482
 #: includes/settings/alg-wc-ccf-options.php:552
 #: includes/settings/alg-wc-ccf-options.php:564
-#, php-format
 msgid "In %1$s format, e.g.: %2$s"
 msgstr ""
 
@@ -662,7 +654,6 @@ msgstr ""
 
 #. Translators: %s: URL.
 #: includes/settings/alg-wc-ccf-options.php:525
-#, php-format
 msgid "Visit <a href=\"%s\" target=\"_blank\">timepicker options page</a> for valid time formats"
 msgstr ""
 
@@ -880,7 +871,6 @@ msgstr ""
 
 #. Translators: %s: Field ID example.
 #: includes/settings/alg-wc-ccf-options.php:799
-#, php-format
 msgid "E.g.: %s."
 msgstr ""
 
@@ -962,95 +952,92 @@ msgstr ""
 
 #. Translators: %s: Placeholder list.
 #: includes/settings/class-alg-wc-ccf-settings-general.php:38
-#, php-format
 msgid "Placeholders: %s"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ccf-settings-general.php:59
+#: includes/settings/class-alg-wc-ccf-settings-general.php:60
 msgid "Custom Checkout Fields Options"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ccf-settings-general.php:65
+#: includes/settings/class-alg-wc-ccf-settings-general.php:66
 msgid "Enable plugin"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ccf-settings-general.php:71
+#: includes/settings/class-alg-wc-ccf-settings-general.php:72
 msgid "Custom fields number"
 msgstr ""
 
 #. Translators: %s: Button title.
-#: includes/settings/class-alg-wc-ccf-settings-general.php:75
-#, php-format
+#: includes/settings/class-alg-wc-ccf-settings-general.php:76
 msgid "Click \"%s\" after you set this number - new settings sections will be displayed for each field."
 msgstr ""
 
-#: includes/settings/class-alg-wc-ccf-settings-general.php:77
+#: includes/settings/class-alg-wc-ccf-settings-general.php:78
 msgid "Save changes"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ccf-settings-general.php:100
+#: includes/settings/class-alg-wc-ccf-settings-general.php:106
 msgid "General Options"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ccf-settings-general.php:105
+#: includes/settings/class-alg-wc-ccf-settings-general.php:111
 msgid "Add all fields to admin emails"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ccf-settings-general.php:112
+#: includes/settings/class-alg-wc-ccf-settings-general.php:118
 msgid "Add all fields to customers emails"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ccf-settings-general.php:119
-#: includes/settings/class-alg-wc-ccf-settings-general.php:144
+#: includes/settings/class-alg-wc-ccf-settings-general.php:125
+#: includes/settings/class-alg-wc-ccf-settings-general.php:153
 msgid "Before the fields"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ccf-settings-general.php:125
-#: includes/settings/class-alg-wc-ccf-settings-general.php:150
+#: includes/settings/class-alg-wc-ccf-settings-general.php:132
+#: includes/settings/class-alg-wc-ccf-settings-general.php:160
 msgid "Each field"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ccf-settings-general.php:131
-#: includes/settings/class-alg-wc-ccf-settings-general.php:156
+#: includes/settings/class-alg-wc-ccf-settings-general.php:140
+#: includes/settings/class-alg-wc-ccf-settings-general.php:168
 msgid "After the fields"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ccf-settings-general.php:137
+#: includes/settings/class-alg-wc-ccf-settings-general.php:146
 msgid "Add all fields to \"Order Received\" (i.e., \"Thank You\") and \"View Order\" pages"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ccf-settings-general.php:166
+#: includes/settings/class-alg-wc-ccf-settings-general.php:179
 msgid "Advanced Options"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ccf-settings-general.php:171
+#: includes/settings/class-alg-wc-ccf-settings-general.php:184
 msgid "Force fields sort by priority"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ccf-settings-general.php:173
+#: includes/settings/class-alg-wc-ccf-settings-general.php:186
 msgid "Enable this if you are having theme related issues with \"Priority (i.e., order)\" options."
 msgstr ""
 
-#: includes/settings/class-alg-wc-ccf-settings-general.php:179
+#: includes/settings/class-alg-wc-ccf-settings-general.php:192
 msgid "Label template for duplicated fields"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ccf-settings-general.php:192
+#: includes/settings/class-alg-wc-ccf-settings-general.php:205
 msgid "Glue"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ccf-settings-general.php:199
+#: includes/settings/class-alg-wc-ccf-settings-general.php:212
 msgid "Hide unrelated type options"
 msgstr ""
 
-#: includes/settings/class-alg-wc-ccf-settings-general.php:206
+#: includes/settings/class-alg-wc-ccf-settings-general.php:219
 msgid "Fields ID"
 msgstr ""
 
 #. Translators: %s: Field ID example.
-#: includes/settings/class-alg-wc-ccf-settings-general.php:209
-#, php-format
-msgid "Will be used in all fields as the middle part of ID, wrapped in field section and number, e.g., %s."
+#: includes/settings/class-alg-wc-ccf-settings-general.php:222
+msgid "Will be used in all fields as the middle part of ID, wrapped in the field section, and the field number, e.g., %s."
 msgstr ""
 
 #: includes/settings/class-alg-wc-settings-ccf.php:73
