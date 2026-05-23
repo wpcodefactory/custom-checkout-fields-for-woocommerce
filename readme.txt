@@ -2,8 +2,8 @@
 Contributors: wpcodefactory, anbinder, karzin, omardabbas
 Tags: woocommerce, checkout, ecommerce
 Requires at least: 4.4
-Tested up to: 6.8
-Stable tag: 1.9.4
+Tested up to: 7.0
+Stable tag: 1.9.5
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -104,6 +104,10 @@ Add custom fields to WooCommerce checkout page.
 1. Field options.
 
 == Changelog ==
+
+= 1.9.5 - 23/05/2026 =
+* Tested up to: 7.0.
+* WC tested up to: 10.7.
 
 = 1.9.4 - 16/10/2025 =
 * Dev - WPFactory Recommendations - Library updated (to v1.0.6).
