@@ -2,7 +2,7 @@
 /**
  * Custom Checkout Fields for WooCommerce - Main Class
  *
- * @version 1.9.2
+ * @version 1.9.6
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -41,7 +41,7 @@ final class Alg_WC_CCF {
 	/**
 	 * Alg_WC_CCF Constructor.
 	 *
-	 * @version 1.9.0
+	 * @version 1.9.6
 	 * @since   1.0.0
 	 *
 	 * @access  public
@@ -67,9 +67,6 @@ final class Alg_WC_CCF {
 		defined( 'ALG_WC_CCF_ID' )  || define( 'ALG_WC_CCF_ID',  'alg_wc_ccf' );
 		defined( 'ALG_WC_CCF_KEY' ) || define( 'ALG_WC_CCF_KEY', sanitize_key( get_option( 'alg_wc_ccf_key', 'alg_wc_checkout_field' ) ) );
 
-		// Set up localisation
-		add_action( 'init', array( $this, 'localize' ) );
-
 		// Declare compatibility with custom order tables for WooCommerce
 		add_action( 'before_woocommerce_init', array( $this, 'wc_declare_compatibility' ) );
 
@@ -85,20 +82,6 @@ final class Alg_WC_CCF {
 		if ( is_admin() ) {
 			$this->admin();
 		}
-	}
-
-	/**
-	 * localize.
-	 *
-	 * @version 1.6.0
-	 * @since   1.5.0
-	 */
-	function localize() {
-		load_plugin_textdomain(
-			'custom-checkout-fields-for-woocommerce',
-			false,
-			dirname( plugin_basename( ALG_WC_CCF_FILE ) ) . '/langs/'
-		);
 	}
 
 	/**
